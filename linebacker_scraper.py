@@ -1,10 +1,9 @@
 
 # import dependencies
+import config
 from selenium import webdriver
 
 # settings
-username = 'rmarshallsmith@hotmail.com'
-password = 'football2020'
 signin_url = 'https://www.thelinebacker.com/signin'
 games_url = 'https://www.thelinebacker.com/{}/games/{}'
 odds_url = 'https://www.thelinebacker.com/odds/{}'
@@ -24,9 +23,9 @@ if __name__ == '__main__':
 	for element in driver.find_elements_by_tag_name('input'):
 		name = element.get_attribute('name')
 		if name == 'email':
-			element.send_keys(username)
+			element.send_keys(config.linebacker_username)
 		elif name == 'password':
-			element.send_keys(password)
+			element.send_keys(config.linebacker_password)
 	for element in driver.find_elements_by_tag_name('button'):
 		if element.text == 'Log in':
 			element.click()
