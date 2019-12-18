@@ -1,0 +1,7 @@
+{
+  "user": "doadmin",
+  "passwd": "bdwqszn71h6pp6a6",
+  "host": "db-mysql-nyc1-48787-do-user-6792095-0.db.ondigitalocean.com",
+  "port": 25060,
+  "database": "defaultdb"
+}
