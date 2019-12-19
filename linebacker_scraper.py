@@ -22,7 +22,7 @@ odds_table_class = 'chalk-event'
 table_indices = (0, 2, 10, 12, 16, 18, 26, 28, 36, 38, 44, 48, 50, 56, 60)
 best_bets_table_id = 'sc-bTiqRo.LaLZW'
 bestbets_insert = "INSERT INTO bestbets (rotation, league, date, match_details, play, line, odds, play_amount) values ({}, '{}', '{}', '{}', '{}', {}, {}, {});"
-games_insert = "INSERT INTO games (league, home_team, away_team, date, home_win, away_win, home_proj_score, away_proj_score, spread_total, home_spread_1, home_spread_2, away_spread_1, away_spread_2, total, home_total_1, home_total_2, away_total_1, away_total_2) values ('{}', '{}', '{}', '{}', {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, '{}', {}, '{}');"
+games_insert = "INSERT INTO games (league, home_team, away_team, date, home_win, away_win, home_proj_score, away_proj_score, spread_total, home_spread_1, home_spread_2, away_spread_1, away_spread_2, total, home_total, odds_under, away_total, odds_total) values ('{}', '{}', '{}', '{}', {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {});"
 odds_insert = "INSERT INTO odds (league, home_team, away_team, date, odds_group, home_odds_1, home_odds_2, away_odds_1, away_odds_2, price_total, odds_over, odds_under) values ('{}', '{}', '{}', '{}', '{}', {}, {}, {}, {}, {}, {}, {});"
 time_key = '(\d+)\:(\d+)([ap])'
 games_date_key = '.+?\,\s+(\S+)\s+(\d+)[thndr]{2}\s+at\s+(\d+)\:(\d+)([ap])m'
@@ -33,10 +33,6 @@ months = 'January February March April May June July August September October No
 driver = None
 database = None
 cursor = None
-
-#BESTBETS rotation, league, date, match_details, play, line, odds, play_amount
-#GAME league, home_team, away_team, date, home_win, away_win, home_proj_score, away_proj_score, spread_total, home_spread_1, home_spread_2, away_spread_1, away_spread_2, total, home_total_1, home_total_2, away_total_1, away_total_2
-#ODDS league, home_team, away_team, date, odds_group, home_odds_1, home_odds_2, away_odds_1, away_odds_2, price_total, over, under
 
 # helper
 def wait_for_element(class_name, by=By.CLASS_NAME):
@@ -103,11 +99,11 @@ if __name__ == '__main__':
 			row[7] = row[7][1:]
 
 			# store
-			print(bestbets_insert.format(*row))
+			query(bestbets_insert, *row)
 
 			# reset
 			row = []
-	exit()
+
 	# go to sports
 	for sport, odds_type in (('NFL', 1), ('NCAAF', 1), ('NBA', 1), ('NCAAB', 1), ('MLB', 1), ('NHL', 1)):
 
@@ -138,15 +134,15 @@ if __name__ == '__main__':
 				if apm == 'p': hour += 12
 
 				# store data
-				games_insert.format(
+				query(games_insert,
 					sport,
 					data[10].strip() + ' ' + data[12].strip(),
 					data[0].strip() + ' ' + data[2].strip(),
 					'{}-{}-{} {}:{}:00'.format(year, numstr(month_num), numstr(day), numstr(hour), numstr(minute)),
-					data[24][:len(data[24]) - 1], data[16][:len(data[16]) - 1],
+					data[24].replace('%', ''), data[16].replace('%', ''),
 					data[34], data[26],
 					data[46], data[54][1:], data[50], data[36][1:], data[40],
-					data[66], data[74][1:], data[70], data[56][1:], data[60]
+					data[66], data[74][1:], data[70][:len(data[70]) - 3], data[56][1:], data[60][:len(data[60]) - 3]
 				)
 
 			# update
@@ -222,5 +218,3 @@ if __name__ == '__main__':
 					  row['odds'][odds]['price-total'],
 					  overunder[0][1:], overunder[1][1:],
 				)
-
-		exit()

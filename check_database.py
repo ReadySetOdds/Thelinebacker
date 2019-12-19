@@ -10,11 +10,12 @@ if __name__ == '__main__':
     cursor = database.cursor()
 
     # databases
-    for name in ('odds',):
+    for name in ('bestbets', 'games', 'odds'):
         cursor.execute('SELECT * FROM {};'.format(name))
         database.commit()
+        print(name)
         for item in cursor.fetchall():
-            print(item)
+            print('\t' + str(item))
 
     # finish
     database.close()
