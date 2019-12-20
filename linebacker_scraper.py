@@ -60,7 +60,7 @@ if __name__ == '__main__':
 	# start driver
 	driver_options = webdriver.firefox.options.Options()
 	driver_options.headless = False
-	driver = webdriver.Firefox(options=driver_options)
+	driver = webdriver.Firefox('geckodriver', options=driver_options)
 	
 	# log into page
 	driver.get(signin_url)
