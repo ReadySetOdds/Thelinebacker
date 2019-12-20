@@ -60,8 +60,8 @@ if __name__ == '__main__':
 	# start driver
 	driver_options = webdriver.firefox.options.Options()
 	driver_options.headless = False
-	driver = webdriver.Firefox('geckodriver', options=driver_options)
-	
+	driver = webdriver.Firefox(firefox_binary='geckodriver', options=driver_options)
+
 	# log into page
 	driver.get(signin_url)
 	for element in driver.find_elements_by_tag_name('input'):
@@ -116,8 +116,7 @@ if __name__ == '__main__':
 			except:pass
 
 	# go to sports
-	#for sport, uses_calendar in (('NFL', False), ('NCAAF', False), ('NBA', True), ('NCAAB', True), ('MLB', True), ('NHL', True)):
-	for sport, uses_calendar in (('NBA', True), ('NCAAB', True), ('MLB', True), ('NHL', True)):
+	for sport, uses_calendar in (('NFL', False), ('NCAAF', False), ('NBA', True), ('NCAAB', True), ('MLB', True), ('NHL', True)):
 
 		# initalize games page
 		driver.get(initial_games_url.format(sport.lower()))
