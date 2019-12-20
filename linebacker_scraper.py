@@ -4,8 +4,9 @@ from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
+from selenium.common.exceptions import TimeoutException, NoSuchElementException
 from html2text import html2text as htt
-import pymysql, json, datetime, re
+import pymysql, json, datetime, re, os
 
 # constants
 linebacker_username = 'rmarshallsmith@hotmail.com'
@@ -15,8 +16,10 @@ initial_games_url = 'https://www.thelinebacker.com/{}/games'
 games_url = initial_games_url + '/{}'
 odds_url = 'https://www.thelinebacker.com/odds/{}'
 best_bets_column_count = 8
-element_timeout = 30
-weeks_dropdown_class = 'sc-iFMziU.lkmqRa'
+element_timeout = 60
+calendar_button = 'sc-feWbDf.bVBUqB.sc-htoDjs.iArBBn'
+weeks_dropdown_button_class = 'sc-keVrkP.ktOnIp'
+weeks_dropdown_list_class = 'sc-exkUMo.hyEDPn'
 games_table_class = 'sc-jqIZGH.dYoubK'
 odds_table_class = 'chalk-event'
 table_indices = (0, 2, 10, 12, 16, 18, 26, 28, 36, 38, 44, 48, 50, 56, 60)
@@ -55,7 +58,9 @@ if __name__ == '__main__':
 	cursor = database.cursor()
 
 	# start driver
-	driver = webdriver.Firefox()
+	driver_options = webdriver.firefox.options.Options()
+	driver_options.headless = False
+	driver = webdriver.Firefox(options=driver_options)
 	
 	# log into page
 	driver.get(signin_url)
@@ -81,31 +86,38 @@ if __name__ == '__main__':
 		row.append(cell)
 		if len(row) > best_bets_column_count:
 
-			# fix date and time
-			datestr = row.pop(2)
-			month, day = (int(item) for item in datestr.split('/'))
-			if month < today.month: year = today.year + 1
-			else: year = today.year
-			hour, minute, apm = re.findall(time_key, row[2])[0]
-			hour = int(hour)
-			if apm == 'p': hour += 12
-			minute = int(minute)
-			row[2] = '{}-{}-{} {}:{}:00'.format(
-				year, numstr(month), numstr(day),
-				numstr(hour), numstr(minute),
-			)
+			# prepare for error
+			try:
 
-			# clean up
-			row[7] = row[7][1:]
+				# fix date and time
+				datestr = row.pop(2)
+				month, day = (int(item) for item in datestr.split('/'))
+				if month < today.month: year = today.year + 1
+				else: year = today.year
+				hour, minute, apm = re.findall(time_key, row[2])[0]
+				hour = int(hour)
+				if apm == 'p': hour += 12
+				if hour == 24: hour = 0
+				minute = int(minute)
+				row[2] = '{}-{}-{} {}:{}:00'.format(
+					year, numstr(month), numstr(day),
+					numstr(hour), numstr(minute),
+				)
 
-			# store
-			query(bestbets_insert, *row)
+				# clean up
+				row[7] = row[7][1:]
 
-			# reset
-			row = []
+				# store
+				query(bestbets_insert, *row)
+
+				# reset
+				row = []
+			# oops
+			except:pass
 
 	# go to sports
-	for sport, odds_type in (('NFL', 1), ('NCAAF', 1), ('NBA', 1), ('NCAAB', 1), ('MLB', 1), ('NHL', 1)):
+	#for sport, uses_calendar in (('NFL', False), ('NCAAF', False), ('NBA', True), ('NCAAB', True), ('MLB', True), ('NHL', True)):
+	for sport, uses_calendar in (('NBA', True), ('NCAAB', True), ('MLB', True), ('NHL', True)):
 
 		# initalize games page
 		driver.get(initial_games_url.format(sport.lower()))
@@ -113,40 +125,58 @@ if __name__ == '__main__':
 
 		# get games data
 		last_url = ''
-		week = 1
+		if uses_calendar: week = today
+		else: week = 1
 		while True:
 
 			# go to page
 			driver.get(games_url.format(sport.lower(), week))
-			wait_for_element(games_table_class)
-			if driver.current_url == last_url: break
+			try:
+				wait_for_element(games_table_class)
+				if driver.current_url == last_url: break
 
-			# go through tables
-			for table in driver.find_elements_by_class_name(games_table_class):
-				data = htt(table.get_attribute('innerHTML')).split('\n')
+				# go through tables
+				for table in driver.find_elements_by_class_name(games_table_class):
 
-				# format time
-				month, day, hour, minute, apm = re.findall(games_date_key, data[14])[0]
-				month_num = months.index(month) + 1
-				year = today.year
-				if month_num < 9: year += 1
-				hour = int(hour)
-				if apm == 'p': hour += 12
+					# prepare for error
+					try:
 
-				# store data
-				query(games_insert,
-					sport,
-					data[10].strip() + ' ' + data[12].strip(),
-					data[0].strip() + ' ' + data[2].strip(),
-					'{}-{}-{} {}:{}:00'.format(year, numstr(month_num), numstr(day), numstr(hour), numstr(minute)),
-					data[24].replace('%', ''), data[16].replace('%', ''),
-					data[34], data[26],
-					data[46], data[54][1:], data[50], data[36][1:], data[40],
-					data[66], data[74][1:], data[70][:len(data[70]) - 3], data[56][1:], data[60][:len(data[60]) - 3]
-				)
+						# start
+						data = htt(table.get_attribute('innerHTML')).split('\n')
+
+						# format time
+						month, day, hour, minute, apm = re.findall(games_date_key, data[14])[0]
+						month_num = months.index(month) + 1
+						year = today.year
+						if month_num < 9: year += 1
+						hour = int(hour)
+						if apm == 'p': hour += 12
+						if hour == 24: hour = 0
+
+						# store data
+						query(games_insert,
+							sport,
+							data[10].strip() + ' ' + data[12].strip(),
+							data[0].strip() + ' ' + data[2].strip(),
+							'{}-{}-{} {}:{}:00'.format(year, numstr(month_num), numstr(day), numstr(hour), numstr(minute)),
+							data[24].replace('%', ''), data[16].replace('%', ''),
+							data[34], data[26],
+							data[46], data[54][1:], data[50], data[36][1:], data[40],
+							data[66], data[74][1:], data[70][:len(data[70]) - 3], data[56][1:], data[60][:len(data[60]) - 3]
+						)
+
+					# oops
+					except:pass
+
+			# oops
+			except TimeoutException:
+				if driver.current_url == last_url: break
+			except NoSuchElementException:
+				if driver.current_url == last_url: break
 
 			# update
-			week += 1
+			if uses_calendar: week -= datetime.timedelta(days=1)
+			else: week += 1
 			last_url = driver.current_url
 
 
@@ -155,66 +185,74 @@ if __name__ == '__main__':
 		wait_for_element(odds_table_class)
 		for table in driver.find_elements_by_class_name(odds_table_class):
 
-			# start
-			row = {'league': sport}
+			# prepare for error
+			try:
 
-			# date / time
-			data_cell = driver.find_element_by_class_name('chalk-cell.chalk-cell-date')
-			month, day, year, hour, minute, apm = re.findall(odds_date_key, data_cell.text, re.DOTALL)[0]
-			hour = int(hour)
-			if apm == 'P': hour += 12
-			row['date'] = '{}-{}-{} {}:{}:00'.format(
-				year, numstr(months.index(month) + 1), day,
-				hour, minute
-			)
+				# start
+				row = {'league': sport}
 
-			# team names
-			cell = driver.find_element_by_class_name('chalk-cell.chalk-team.chalk-team-away')
-			if cell: row['away'] = cell.text.strip()
-
-			cell = driver.find_element_by_class_name('chalk-cell.chalk-team.chalk-team-home')
-			if cell: row['home'] = cell.text.strip()
-
-			# odds
-			row['odds'] = {}
-			for odds_table in table.find_elements_by_class_name('chalk-odds-scroller'):
-				for column in odds_table.find_elements_by_tag_name('td'):
-
-					column_name = column.find_element_by_class_name('chalk-cell.chalk-header').text.strip()
-					row['odds'][column_name] = {}
-
-					for class_id, name in (
-							('chalk-cell.chalk-odds.chalk-odds-away', 'away-odds'),
-							('chalk-cell.chalk-odds.chalk-odds-home', 'home-odds'),
-							('chalk-price.chalk-price-total', 'price-total'),
-							('chalk-price.chalk-price-overunder', 'overunder'),
-					):
-						cell = column.find_element_by_class_name(class_id)
-						if cell: row['odds'][column_name][name] = cell.text.strip()
-						else: row['odds'][column_name][name] = ''
-
-			# save data
-			for odds in row['odds']:
-
-				if row['odds'][odds]['home-odds']:
-					value = row['odds'][odds]['home-odds'].strip().split()
-					if len(value) == 1: home_odds = (float(value), 0)
-					else: home_odds = tuple(float(item) for item in value)
-				else: home_odds = (0, 0)
-
-				if row['odds'][odds]['away-odds']:
-					value = row['odds'][odds]['away-odds'].strip().split()
-					if len(value) == 1: away_odds = (float(value), 0)
-					else: away_odds = tuple(float(item) for item in value)
-				else: away_odds = (0, 0)
-
-				overunder = row['odds'][odds]['overunder'].split('\n')
-
-				query(odds_insert,
-					  sport,
-					  row['home'], row['away'],
-					  row['date'],
-					  odds, home_odds[0], home_odds[1], away_odds[0], away_odds[1],
-					  row['odds'][odds]['price-total'],
-					  overunder[0][1:], overunder[1][1:],
+				# date / time
+				data_cell = driver.find_element_by_class_name('chalk-cell.chalk-cell-date')
+				month, day, year, hour, minute, apm = re.findall(odds_date_key, data_cell.text, re.DOTALL)[0]
+				hour = int(hour)
+				if apm == 'P': hour += 12
+				if hour == 24: hour = 0
+				if hour == 24: hour = 0
+				row['date'] = '{}-{}-{} {}:{}:00'.format(
+					year, numstr(months.index(month) + 1), day,
+					hour, minute
 				)
+
+				# team names
+				cell = driver.find_element_by_class_name('chalk-cell.chalk-team.chalk-team-away')
+				if cell: row['away'] = cell.text.strip()
+
+				cell = driver.find_element_by_class_name('chalk-cell.chalk-team.chalk-team-home')
+				if cell: row['home'] = cell.text.strip()
+
+				# odds
+				row['odds'] = {}
+				for odds_table in table.find_elements_by_class_name('chalk-odds-scroller'):
+					for column in odds_table.find_elements_by_tag_name('td'):
+
+						column_name = column.find_element_by_class_name('chalk-cell.chalk-header').text.strip()
+						row['odds'][column_name] = {}
+
+						for class_id, name in (
+								('chalk-cell.chalk-odds.chalk-odds-away', 'away-odds'),
+								('chalk-cell.chalk-odds.chalk-odds-home', 'home-odds'),
+								('chalk-price.chalk-price-total', 'price-total'),
+								('chalk-price.chalk-price-overunder', 'overunder'),
+						):
+							cell = column.find_element_by_class_name(class_id)
+							if cell: row['odds'][column_name][name] = cell.text.strip()
+							else: row['odds'][column_name][name] = ''
+
+				# save data
+				for odds in row['odds']:
+
+					if row['odds'][odds]['home-odds']:
+						value = row['odds'][odds]['home-odds'].strip().split()
+						if len(value) == 1: home_odds = (float(value), 0)
+						else: home_odds = tuple(float(item) for item in value)
+					else: home_odds = (0, 0)
+
+					if row['odds'][odds]['away-odds']:
+						value = row['odds'][odds]['away-odds'].strip().split()
+						if len(value) == 1: away_odds = (float(value), 0)
+						else: away_odds = tuple(float(item) for item in value)
+					else: away_odds = (0, 0)
+
+					overunder = row['odds'][odds]['overunder'].split('\n')
+
+					query(odds_insert,
+						  sport,
+						  row['home'], row['away'],
+						  row['date'],
+						  odds, home_odds[0], home_odds[1], away_odds[0], away_odds[1],
+						  row['odds'][odds]['price-total'],
+						  overunder[0][1:], overunder[1][1:],
+					)
+
+			# oops
+			except:pass
