@@ -6,7 +6,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import TimeoutException, NoSuchElementException
 from html2text import html2text as htt
-import pymysql, json, datetime, re, os
+import pymysql, json, datetime, re, os, argparse
 
 # constants
 linebacker_username = 'rmarshallsmith@hotmail.com'
@@ -16,7 +16,7 @@ initial_games_url = 'https://www.thelinebacker.com/{}/games'
 games_url = initial_games_url + '/{}'
 odds_url = 'https://www.thelinebacker.com/odds/{}'
 best_bets_column_count = 8
-element_timeout = 60
+element_timeout = 300
 calendar_button = 'sc-feWbDf.bVBUqB.sc-htoDjs.iArBBn'
 weeks_dropdown_button_class = 'sc-keVrkP.ktOnIp'
 weeks_dropdown_list_class = 'sc-exkUMo.hyEDPn'
@@ -120,64 +120,66 @@ if __name__ == '__main__':
 
 		# initalize games page
 		driver.get(initial_games_url.format(sport.lower()))
-		wait_for_element(games_table_class)
+		try:
+			wait_for_element(games_table_class)
 
-		# get games data
-		last_url = ''
-		if uses_calendar: week = today
-		else: week = 1
-		while True:
+			# get games data
+			last_url = ''
+			if uses_calendar: week = today
+			else: week = 1
+			while True:
 
-			# go to page
-			driver.get(games_url.format(sport.lower(), week))
-			try:
-				wait_for_element(games_table_class)
-				if driver.current_url == last_url: break
+				# go to page
+				driver.get(games_url.format(sport.lower(), week))
+				try:
+					wait_for_element(games_table_class)
+					if driver.current_url == last_url: break
 
-				# go through tables
-				for table in driver.find_elements_by_class_name(games_table_class):
+					# go through tables
+					for table in driver.find_elements_by_class_name(games_table_class):
 
-					# prepare for error
-					try:
+						# prepare for error
+						try:
 
-						# start
-						data = htt(table.get_attribute('innerHTML')).split('\n')
+							# start
+							data = htt(table.get_attribute('innerHTML')).split('\n')
 
-						# format time
-						month, day, hour, minute, apm = re.findall(games_date_key, data[14])[0]
-						month_num = months.index(month) + 1
-						year = today.year
-						if month_num < 9: year += 1
-						hour = int(hour)
-						if apm == 'p': hour += 12
-						if hour == 24: hour = 0
+							# format time
+							month, day, hour, minute, apm = re.findall(games_date_key, data[14])[0]
+							month_num = months.index(month) + 1
+							year = today.year
+							if month_num < 9: year += 1
+							hour = int(hour)
+							if apm == 'p': hour += 12
+							if hour == 24: hour = 0
 
-						# store data
-						query(games_insert,
-							sport,
-							data[10].strip() + ' ' + data[12].strip(),
-							data[0].strip() + ' ' + data[2].strip(),
-							'{}-{}-{} {}:{}:00'.format(year, numstr(month_num), numstr(day), numstr(hour), numstr(minute)),
-							data[24].replace('%', ''), data[16].replace('%', ''),
-							data[34], data[26],
-							data[46], data[54][1:], data[50], data[36][1:], data[40],
-							data[66], data[74][1:], data[70][:len(data[70]) - 3], data[56][1:], data[60][:len(data[60]) - 3]
-						)
+							# store data
+							query(games_insert,
+								sport,
+								data[10].strip() + ' ' + data[12].strip(),
+								data[0].strip() + ' ' + data[2].strip(),
+								'{}-{}-{} {}:{}:00'.format(year, numstr(month_num), numstr(day), numstr(hour), numstr(minute)),
+								data[24].replace('%', ''), data[16].replace('%', ''),
+								data[34], data[26],
+								data[46], data[54][1:], data[50], data[36][1:], data[40],
+								data[66], data[74][1:], data[70][:len(data[70]) - 3], data[56][1:], data[60][:len(data[60]) - 3]
+							)
 
-					# oops
-					except:pass
+						# oops
+						except:pass
 
-			# oops
-			except TimeoutException:
-				if driver.current_url == last_url: break
-			except NoSuchElementException:
-				if driver.current_url == last_url: break
+				# oops
+				except TimeoutException:
+					if driver.current_url == last_url: break
+				except NoSuchElementException:
+					if driver.current_url == last_url: break
 
-			# update
-			if uses_calendar: week -= datetime.timedelta(days=1)
-			else: week += 1
-			last_url = driver.current_url
-
+				# update
+				if uses_calendar: week -= datetime.timedelta(days=1)
+				else: week += 1
+				last_url = driver.current_url
+		# oops
+		except: pass
 
 		# get odds data
 		driver.get(odds_url.format(sport.lower()))
