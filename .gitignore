@@ -3,3 +3,4 @@ geckodriver.log
 __pycache__
 .idea
 *.pyc
+already.pkl
