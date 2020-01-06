@@ -46,6 +46,7 @@ def query (qu, *args):
 	if database_on:
 		cursor.execute(qu.format(*args))
 		database.commit()
+	else: print(args)
 
 def numstr(value):
 	val = int(value)
@@ -107,7 +108,7 @@ if __name__ == '__main__':
 					if month < today.month: year = today.year + 1
 					else: year = today.year
 					hour, minute, apm = re.findall(time_key, row[2])[0]
-					hour = int(hour)
+					hour = int(hour) + 1
 					if apm == 'p': hour += 12
 					if hour == 24: hour = 0
 					minute = int(minute)
@@ -165,7 +166,7 @@ if __name__ == '__main__':
 								month_num = months.index(month) + 1
 								year = today.year
 								if month_num < 9: year += 1
-								hour = int(hour)
+								hour = int(hour) + 1
 								if apm == 'p': hour += 12
 								if hour == 24: hour = 0
 
@@ -215,9 +216,8 @@ if __name__ == '__main__':
 					# date / time
 					data_cell = driver.find_element_by_class_name('chalk-cell.chalk-cell-date')
 					month, day, year, hour, minute, apm = re.findall(odds_date_key, data_cell.text, re.DOTALL)[0]
-					hour = int(hour)
+					hour = int(hour) + 1
 					if apm == 'P': hour += 12
-					if hour == 24: hour = 0
 					if hour == 24: hour = 0
 					row['date'] = '{}-{}-{} {}:{}:00'.format(
 						year, numstr(months.index(month) + 1), day,
