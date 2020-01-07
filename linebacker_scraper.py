@@ -6,7 +6,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import TimeoutException, NoSuchElementException
 from html2text import html2text as htt
-import pymysql, json, datetime, re, os, pickle
+import pymysql, json, datetime, re, os, pickle, sys
 
 # constants
 linebacker_username = 'rmarshallsmith@hotmail.com'
@@ -16,7 +16,7 @@ initial_games_url = 'https://www.thelinebacker.com/{}/games'
 games_url = initial_games_url + '/{}'
 odds_url = 'https://www.thelinebacker.com/odds/{}'
 best_bets_column_count = 8
-element_timeout = 300
+element_timeout = 150
 calendar_button = 'sc-feWbDf.bVBUqB.sc-htoDjs.iArBBn'
 weeks_dropdown_button_class = 'sc-keVrkP.ktOnIp'
 weeks_dropdown_list_class = 'sc-exkUMo.hyEDPn'
@@ -35,7 +35,7 @@ months = 'January February March April May June July August September October No
 # variables
 driver = None
 database = None
-database_on = True
+database_on = False
 cursor = None
 
 # helper
@@ -57,11 +57,17 @@ def numstr(value):
 if __name__ == '__main__':
 
 	# get lasts
-	if os.path.exists('already.pkl'):
+	#if os.path.exists('already.pkl'):
+	if False:
 		already = pickle.load(open('already.pkl', 'rb'))
 	else:
 		already = {name:{sport: [] for sport in ('NFL','NCAAF', 'NBA', 'NCAAB', 'MLB', 'NHL')} for name in ('odds', 'games')}
 		already['bestbets'] = []
+
+	# scrape all pages or just 1
+	do_all = False
+	if len(sys.argv) > 1:
+		if 'all' in sys.argv: do_all = True
 
 	# log into database
 	if database_on:
@@ -70,7 +76,7 @@ if __name__ == '__main__':
 
 	# start driver
 	driver_options = webdriver.firefox.options.Options()
-	driver_options.headless = True
+	#driver_options.headless = True
 	driver = webdriver.Firefox(options=driver_options)
 
 	# log into page
@@ -105,7 +111,7 @@ if __name__ == '__main__':
 					# fix date and time
 					datestr = row.pop(2)
 					month, day = (int(item) for item in datestr.split('/'))
-					if month < today.month: year = today.year + 1
+					if month < 1: year = today.year - 1
 					else: year = today.year
 					hour, minute, apm = re.findall(time_key, row[2])[0]
 					hour = int(hour) + 1
@@ -129,155 +135,175 @@ if __name__ == '__main__':
 				except:pass
 
 	# go to sports
-	for sport, uses_calendar in (('NFL', False), ('NCAAF', False), ('NBA', True), ('NCAAB', True), ('MLB', True), ('NHL', True)):
+	sport_did = []
+	for sport, uses_calendar, special_odds in (
+			('NFL', False, False), ('NCAAF', False, False),
+			('NBA', True, False), ('NCAAB', True, False),
+			('MLB', True, True), ('NHL', True, False)
+	):
 
-		# initialize games page
-		driver.get(initial_games_url.format(sport.lower()))
-		try:
-			wait_for_element(games_table_class)
+		if True:
 
-			# get games data
-			last_url = ''
-			if uses_calendar: week = today
-			else: week = 1
-			while True:
+			# initialize games page
+			driver.get(initial_games_url.format(sport.lower()))
+			try:
+				wait_for_element(games_table_class)
 
-				# start
-				if week not in already['games'][sport]:
-					already['games'][sport].append(week)
+				# get games data
+				last_url = ''
+				if uses_calendar: week = today
+				else: week = 1
+				while True:
 
-					# go to page
-					driver.get(games_url.format(sport.lower(), week))
-					try:
-						wait_for_element(games_table_class)
-						if driver.current_url == last_url: break
+					# do this
+					if do_all:
+						do_this = True
+					else:
+						if sport in sport_did:do_this = False
+						else:
+							do_this = True
+							sport_did.append(sport)
+					if do_this:
 
-						# go through tables
-						for table in driver.find_elements_by_class_name(games_table_class):
+						# start
+						if week not in already['games'][sport]:
+							already['games'][sport].append(week)
 
-							# prepare for error
+							# go to page
+							driver.get(games_url.format(sport.lower(), week))
 							try:
+								wait_for_element(games_table_class)
+								if driver.current_url == last_url: break
 
-								# start
-								data = htt(table.get_attribute('innerHTML')).split('\n')
+								# go through tables
+								for table in driver.find_elements_by_class_name(games_table_class):
 
-								# format time
-								month, day, hour, minute, apm = re.findall(games_date_key, data[14])[0]
-								month_num = months.index(month) + 1
-								year = today.year
-								if month_num < 9: year += 1
-								hour = int(hour) + 1
-								if apm == 'p': hour += 12
-								if hour == 24: hour = 0
+									# prepare for error
+									try:
 
-								# store data
-								query(games_insert,
-									sport,
-									data[10].strip() + ' ' + data[12].strip(),
-									data[0].strip() + ' ' + data[2].strip(),
-									'{}-{}-{} {}:{}:00'.format(year, numstr(month_num), numstr(day), numstr(hour), numstr(minute)),
-									data[24].replace('%', ''), data[16].replace('%', ''),
-									data[34], data[26],
-									data[46], data[54][1:], data[50], data[36][1:], data[40],
-									data[66], data[74][1:], data[70][:len(data[70]) - 3], data[56][1:], data[60][:len(data[60]) - 3]
-								)
+										# start
+										data = htt(table.get_attribute('innerHTML')).split('\n')
+
+										# format time
+										month, day, hour, minute, apm = re.findall(games_date_key, data[14])[0]
+										month_num = months.index(month) + 1
+										year = today.year
+										if month_num < 1: year -= 1
+										hour = int(hour) + 1
+										if apm == 'p': hour += 12
+										if hour == 24: hour = 0
+
+										# store data
+										query(games_insert,
+											sport,
+											data[10].strip() + ' ' + data[12].strip(),
+											data[0].strip() + ' ' + data[2].strip(),
+											'{}-{}-{} {}:{}:00'.format(year, numstr(month_num), numstr(day), numstr(hour), numstr(minute)),
+											data[24].replace('%', ''), data[16].replace('%', ''),
+											data[34], data[26],
+											data[46], data[54][1:], data[50], data[36][1:], data[40],
+											data[66], data[74][1:], data[70][:len(data[70]) - 3], data[56][1:], data[60][:len(data[60]) - 3]
+										)
+
+									# oops
+									except:pass
 
 							# oops
-							except:pass
+							except TimeoutException:
+								if driver.current_url == last_url: break
+							except NoSuchElementException:
+								if driver.current_url == last_url: break
 
-					# oops
-					except TimeoutException:
-						if driver.current_url == last_url: break
-					except NoSuchElementException:
-						if driver.current_url == last_url: break
+							# update
+							if uses_calendar: week -= datetime.timedelta(days=1)
+							else: week += 1
+							last_url = driver.current_url
+					else: break
+			# oops
+			except: pass
 
-					# update
-					if uses_calendar: week -= datetime.timedelta(days=1)
-					else: week += 1
-					last_url = driver.current_url
-		# oops
-		except: pass
-
-		# get odds data
-		driver.get(odds_url.format(sport.lower()))
-		wait_for_element(odds_table_class)
-		for table in driver.find_elements_by_class_name(odds_table_class):
-
-			# odds
-			if today not in already['odds'][sport]:
-				already['odds'][sport].append(sport)
-
-				# prepare for error
-				try:
-
-					# start
-					row = {'league': sport}
-
-					# date / time
-					data_cell = driver.find_element_by_class_name('chalk-cell.chalk-cell-date')
-					month, day, year, hour, minute, apm = re.findall(odds_date_key, data_cell.text, re.DOTALL)[0]
-					hour = int(hour) + 1
-					if apm == 'P': hour += 12
-					if hour == 24: hour = 0
-					row['date'] = '{}-{}-{} {}:{}:00'.format(
-						year, numstr(months.index(month) + 1), day,
-						hour, minute
-					)
-
-					# team names
-					cell = driver.find_element_by_class_name('chalk-cell.chalk-team.chalk-team-away')
-					if cell: row['away'] = cell.text.strip()
-
-					cell = driver.find_element_by_class_name('chalk-cell.chalk-team.chalk-team-home')
-					if cell: row['home'] = cell.text.strip()
+			# get odds data
+			if not special_odds and do_this:
+				driver.get(odds_url.format(sport.lower()))
+				wait_for_element(odds_table_class)
+				for table in driver.find_elements_by_class_name(odds_table_class):
 
 					# odds
-					row['odds'] = {}
-					for odds_table in table.find_elements_by_class_name('chalk-odds-scroller'):
-						for column in odds_table.find_elements_by_tag_name('td'):
+					if today not in already['odds'][sport]:
+						already['odds'][sport].append(sport)
 
-							column_name = column.find_element_by_class_name('chalk-cell.chalk-header').text.strip()
-							row['odds'][column_name] = {}
+						# prepare for error
+						try:
 
-							for class_id, name in (
-									('chalk-cell.chalk-odds.chalk-odds-away', 'away-odds'),
-									('chalk-cell.chalk-odds.chalk-odds-home', 'home-odds'),
-									('chalk-price.chalk-price-total', 'price-total'),
-									('chalk-price.chalk-price-overunder', 'overunder'),
-							):
-								cell = column.find_element_by_class_name(class_id)
-								if cell: row['odds'][column_name][name] = cell.text.strip()
-								else: row['odds'][column_name][name] = ''
+							# start
+							row = {'league': sport}
 
-					# save data
-					for odds in row['odds']:
+							# date / time
+							data_cell = driver.find_element_by_class_name('chalk-cell.chalk-cell-date')
+							month, day, year, hour, minute, apm = re.findall(odds_date_key, data_cell.text, re.DOTALL)[0]
+							hour = int(hour) + 1
+							if apm == 'P': hour += 12
+							if hour == 24: hour = 0
+							row['date'] = '{}-{}-{} {}:{}:00'.format(
+								year, numstr(months.index(month) + 1), day,
+								hour, minute
+							)
 
-						if row['odds'][odds]['home-odds']:
-							value = row['odds'][odds]['home-odds'].strip().split()
-							if len(value) == 1: home_odds = (float(value), 0)
-							else: home_odds = tuple(float(item) for item in value)
-						else: home_odds = (0, 0)
+							# team names
+							cell = driver.find_element_by_class_name('chalk-cell.chalk-team.chalk-team-away')
+							if cell: row['away'] = cell.text.strip()
 
-						if row['odds'][odds]['away-odds']:
-							value = row['odds'][odds]['away-odds'].strip().split()
-							if len(value) == 1: away_odds = (float(value), 0)
-							else: away_odds = tuple(float(item) for item in value)
-						else: away_odds = (0, 0)
+							cell = driver.find_element_by_class_name('chalk-cell.chalk-team.chalk-team-home')
+							if cell: row['home'] = cell.text.strip()
 
-						overunder = row['odds'][odds]['overunder'].split('\n')
+							# odds
+							row['odds'] = {}
+							for odds_table in table.find_elements_by_class_name('chalk-odds-scroller'):
+								for column in odds_table.find_elements_by_tag_name('td'):
 
-						query(odds_insert,
-							  sport,
-							  row['home'], row['away'],
-							  row['date'],
-							  odds, home_odds[0], home_odds[1], away_odds[0], away_odds[1],
-							  row['odds'][odds]['price-total'],
-							  overunder[0][1:], overunder[1][1:],
-						)
+									column_name = column.find_element_by_class_name('chalk-cell.chalk-header').text.strip()
+									row['odds'][column_name] = {}
 
-				# oops
-				except:pass
+									for class_id, name in (
+											('chalk-cell.chalk-odds.chalk-odds-away', 'away-odds'),
+											('chalk-cell.chalk-odds.chalk-odds-home', 'home-odds'),
+											('chalk-price.chalk-price-total', 'price-total'),
+											('chalk-price.chalk-price-overunder', 'overunder'),
+									):
+										cell = column.find_element_by_class_name(class_id)
+										if cell: row['odds'][column_name][name] = cell.text.strip()
+										else: row['odds'][column_name][name] = ''
 
-		# finished
-		pickle.dump(already, open('already.pkl', 'wb'))
-		print('Finished!')
+							# save data
+							for odds in row['odds']:
+
+								if row['odds'][odds]['home-odds']:
+									value = row['odds'][odds]['home-odds'].strip().split()
+									if len(value) == 1: home_odds = (float(value), 0)
+									else: home_odds = tuple(float(item) for item in value)
+								else: home_odds = (0, 0)
+
+								if row['odds'][odds]['away-odds']:
+									value = row['odds'][odds]['away-odds'].strip().split()
+									if len(value) == 1: away_odds = (float(value), 0)
+									else: away_odds = tuple(float(item) for item in value)
+								else: away_odds = (0, 0)
+
+								overunder = row['odds'][odds]['overunder'].split('\n')
+
+								query(odds_insert,
+									  sport,
+									  row['home'], row['away'],
+									  row['date'],
+									  odds, home_odds[0], home_odds[1], away_odds[0], away_odds[1],
+									  row['odds'][odds]['price-total'],
+									  overunder[0][1:], overunder[1][1:],
+								)
+
+						# oops
+						except:pass
+
+	# finished
+	driver.close()
+	pickle.dump(already, open('already.pkl', 'wb'))
+	print('Finished!')
