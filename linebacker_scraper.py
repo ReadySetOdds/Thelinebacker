@@ -35,7 +35,7 @@ months = 'January February March April May June July August September October No
 # variables
 driver = None
 database = None
-database_on = False
+database_on = True
 cursor = None
 
 # helper
@@ -76,7 +76,7 @@ if __name__ == '__main__':
 
 	# start driver
 	driver_options = webdriver.firefox.options.Options()
-	#driver_options.headless = True
+	driver_options.headless = True
 	driver = webdriver.Firefox(options=driver_options)
 
 	# log into page
