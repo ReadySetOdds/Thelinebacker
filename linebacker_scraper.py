@@ -6,9 +6,11 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import TimeoutException, NoSuchElementException
 from html2text import html2text as htt
-import pymysql, json, datetime, re, os, pickle, sys
+import pymysql
+import json, datetime, re, os, pickle, sys, inspect
 
 # constants
+script_path = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe()))).replace('\\', '/')
 linebacker_username = 'rmarshallsmith@hotmail.com'
 linebacker_password = 'football2020'
 signin_url = 'https://www.thelinebacker.com/signin'
@@ -59,7 +61,7 @@ if __name__ == '__main__':
 	# get lasts
 	#if os.path.exists('already.pkl'):
 	if False:
-		already = pickle.load(open('already.pkl', 'rb'))
+		already = pickle.load(open(script_path + '/already.pkl', 'rb'))
 	else:
 		already = {name:{sport: [] for sport in ('NFL','NCAAF', 'NBA', 'NCAAB', 'MLB', 'NHL')} for name in ('odds', 'games')}
 		already['bestbets'] = []
@@ -71,7 +73,7 @@ if __name__ == '__main__':
 
 	# log into database
 	if database_on:
-		database = pymysql.connect(**json.load(open('database.json')))
+		database = pymysql.connect(**json.load(open(script_path + '/database.json')))
 		cursor = database.cursor()
 
 	# start driver
@@ -305,5 +307,5 @@ if __name__ == '__main__':
 
 	# finished
 	driver.close()
-	pickle.dump(already, open('already.pkl', 'wb'))
+	pickle.dump(already, open(script_path + '/already.pkl', 'wb'))
 	print('Finished!')
