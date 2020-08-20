@@ -198,6 +198,7 @@ if __name__ == '__main__':
 										Minute = []
 										Apm = []
 										start = 0
+										game_table = []
 
 										for i in range(0,len(data)):
 											if("View Game Details" in data[i]):
@@ -224,9 +225,21 @@ if __name__ == '__main__':
 												Apm.append(apm)
 												
 										for p in range(0,len(games_index)):
-											print(data[start:games_index[p]])
+											game_table.append(data[start:games_index[p]])
 											start = games_index[p]
 
+										for n in range(0,len(game_table)):
+											print(game_table[n][10].strip() + ' ' + game_table[n][12].strip())
+											print(game_table[n][0].strip() + ' ' + game_table[n][2].strip())
+											print('{}-{}-{} {}: {}: 00'.format(year, numstr(month_num), numstr(day), numstr(hour), numstr(minute)))
+											temp = (game_table[n][24].replace('%', '') + game_table[n][16].replace('%', '')).replace('|', '')
+											print(temp)
+											temp = (game_table[n][34] + game_table[n][26]).replace('|', '')
+											print(temp)
+											temp = (game_table[n][46] + game_table[n][54][1:] + game_table[n][50] + game_table[n][36][1:] + game_table[n][40]).replace('|', '')
+											print(temp)
+											print(game_table[n][66], game_table[n][74][1:], game_table[n][70][:len(game_table[n][70]) - 3],game_table[n][56][1:], game_table[n][60][:len(game_table[n][60]) - 3])
+											print('\n')
 										# store data
 										# query(games_insert,
 										# 	sport,
