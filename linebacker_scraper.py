@@ -139,11 +139,10 @@ if __name__ == '__main__':
 
 	# go to sports
 	sport_did = []
-	# do_this = True
 	for sport, uses_calendar, special_odds in (
-			('NFL', False, False), ('NCAAF', False, False),
-			('NBA', True, False), ('NCAAB', True, False),
-			('MLB', True, True), ('NHL', True, False)
+            ('NFL', False, False), ('NCAAF', False, False),
+         	('NBA', True, False), ('NCAAB', True, False),
+         	('MLB', True, True), ('NHL', True, False)
 	):
 
 		if True:
@@ -158,7 +157,7 @@ if __name__ == '__main__':
 				last_url = ''
 				if uses_calendar: week = today
 				else: week = 1
-				while True:
+				if True:
 
 					# do this
 					if do_all:
@@ -189,7 +188,11 @@ if __name__ == '__main__':
 
 										# start
 										data = htt(table.get_attribute('innerHTML')).split('\n')
-										# print(data[16])
+										if(len(data) > 3):
+											special_odds = False
+										else:
+											special_odds = not special_odds
+
 										games_index = []
 										games_number = 0
 										Month = []
@@ -218,7 +221,7 @@ if __name__ == '__main__':
 													hour += 12
 												if hour == 24:
 													hour = 0
-												Month.append(month)
+												Month.append(month_num)
 												Day.append(day)
 												Hour.append(hour)
 												Minute.append(minute)
@@ -228,18 +231,103 @@ if __name__ == '__main__':
 											game_table.append(data[start:games_index[p]])
 											start = games_index[p]
 
+										
 										for n in range(0,len(game_table)):
-											print(game_table[n][10].strip() + ' ' + game_table[n][12].strip())
-											print(game_table[n][0].strip() + ' ' + game_table[n][2].strip())
-											print('{}-{}-{} {}: {}: 00'.format(year, numstr(month_num), numstr(day), numstr(hour), numstr(minute)))
-											temp = (game_table[n][24].replace('%', '') + game_table[n][16].replace('%', '')).replace('|', '')
-											print(temp)
-											temp = (game_table[n][34] + game_table[n][26]).replace('|', '')
-											print(temp)
-											temp = (game_table[n][46] + game_table[n][54][1:] + game_table[n][50] + game_table[n][36][1:] + game_table[n][40]).replace('|', '')
-											print(temp)
-											print(game_table[n][66], game_table[n][74][1:], game_table[n][70][:len(game_table[n][70]) - 3],game_table[n][56][1:], game_table[n][60][:len(game_table[n][60]) - 3])
-											print('\n')
+											if(len(game_table[n]) == 80):
+													print(game_table[n][10].strip() + ' ' + game_table[n][12].strip())
+													print(game_table[n][0].strip() + ' ' + game_table[n][2].strip())
+													print('{}-{}-{} {}: {}: 00'.format(year, numstr(Month[n]), numstr(Day[n]), numstr(Hour[n]), numstr(Minute[n])))
+													temp = (game_table[n][24].replace('%', '') + game_table[n][16].replace('%', '')).replace('|', '')
+													print(temp)
+													temp = (game_table[n][10].strip() + ' ' + game_table[n][12].strip() + " " + game_table[n][22].strip() + " " + game_table[n][26].strip())
+													print(temp)
+													temp = (game_table[n][0].strip() + ' ' + game_table[n][2].strip() + " " + game_table[n][22].strip() + " " + game_table[n][18].strip())
+													print(temp)
+													temp = game_table[n][10].strip() + ' ' + game_table[n][12].strip() + " " + game_table[n][32].strip() + " " + game_table[n][36].strip()
+													print(temp)
+													temp = game_table[n][0].strip() + ' ' + game_table[n][2].strip() + " " + game_table[n][32].strip() + " " + game_table[n][28].strip()
+													print(temp)
+													temp = game_table[n][46].strip() + " " + game_table[n][48].strip()
+													print(temp)
+													temp = game_table[n][10].strip() + ' ' + game_table[n][12].strip() + " " + game_table[n][46].strip() + " " + game_table[n][38].strip() + " " + game_table[n][42].strip()
+													print(temp)
+													temp = game_table[n][0].strip() + ' ' + game_table[n][2].strip() + " " + game_table[n][46].strip() + " " + game_table[n][56].strip() + " " + game_table[n][52].strip()
+													print(temp)
+													temp = game_table[n][66].strip() + " " + game_table[n][68].strip()
+													print(temp)
+													temp = game_table[n][10].strip() + ' ' + game_table[n][12].strip() + " " + game_table[n][66].strip() + game_table[n][58].strip() + " " + game_table[n][62].strip()
+													print(temp)
+													temp = game_table[n][0].strip() + ' ' + game_table[n][2].strip() + " " + game_table[n][66].strip() + game_table[n][76].strip() + " " + game_table[n][72].strip()
+													print(temp)
+													print('\n')
+											elif(len(game_table[n]) == 88):
+												print(game_table[n][10].strip() + ' ' + game_table[n][12].strip())
+												print(game_table[n][0].strip() + ' ' + game_table[n][2].strip())
+												print('{}-{}-{} {}: {}: 00'.format(year, numstr(Month[n]), numstr(Day[n]), numstr(Hour[n]), numstr(Minute[n])))
+												# date
+												temp = (game_table[n][24].replace('%', '') + game_table[n][16].replace('%', '')).replace('|', '')
+												print(temp)
+												# Pitcher
+												temp = (game_table[n][10].strip() + ' ' + game_table[n][12].strip() + " " + game_table[n][12].strip() + " " + game_table[n][22].strip() + " " + game_table[n][26].strip())
+												print(temp)
+												temp = (game_table[n][0].strip() + ' ' + game_table[n][2].strip() + " " + game_table[n][12].strip() + " " + game_table[n][22].strip() + " " + game_table[n][18].strip())
+												print(temp)
+												# Win %
+												temp = game_table[n][10].strip() + ' ' + game_table[n][12].strip() + " " + game_table[n][32].strip() + " " + game_table[n][36].strip()
+												print(temp)
+												temp = game_table[n][0].strip() + ' ' + game_table[n][2].strip() + " " + game_table[n][32].strip() + " " + game_table[n][28].strip()
+												print(temp)
+												# Proj Score
+												temp = game_table[n][10].strip() + ' ' + game_table[n][12].strip() + " " + game_table[n][42].strip() + " " + game_table[n][38].strip()
+												print(temp)
+												temp = game_table[n][0].strip() + ' ' + game_table[n][2].strip() + " " + game_table[n][42].strip() + " " + game_table[n][46].strip()
+												print(temp)
+												# Money Line
+												temp = game_table[n][10].strip() + ' ' + game_table[n][12].strip() + " " + game_table[n][56].strip() + game_table[n][64].strip() + " " + game_table[n][60].strip()
+												print(temp)
+												temp = game_table[n][0].strip() + ' ' + game_table[n][2].strip() + " " + game_table[n][56].strip() + game_table[n][48].strip() + " " + game_table[n][52].strip()
+												print(temp)
+												# Total
+												temp = game_table[n][74].strip() + " " + game_table[n][76].strip()
+												print(temp)
+												temp = game_table[n][10].strip() + ' ' + game_table[n][12].strip() + " " + game_table[n][74].strip() + " " + game_table[n][84].strip() + " " + game_table[n][80].strip()
+												print(temp)
+												temp = game_table[n][0].strip() + ' ' + game_table[n][2].strip() + " " + game_table[n][74].strip() + " " + game_table[n][66].strip() + " " + game_table[n][70].strip()
+												print(temp)
+												print('\n')
+											elif(len(game_table[n]) == 78):
+												print(game_table[n][10].strip() + ' ' + game_table[n][12].strip())
+												print(game_table[n][0].strip() + ' ' + game_table[n][2].strip())
+												print('{}-{}-{} {}: {}: 00'.format(year, numstr(Month[n]), numstr(Day[n]), numstr(Hour[n]), numstr(Minute[n])))
+												# date
+												temp = (game_table[n][24].replace('%', '') + game_table[n][16].replace('%', '')).replace('|', '')
+												print(temp)
+												# Pitcher
+												temp = (game_table[n][10].strip() + ' ' + game_table[n][12].strip() + " " + game_table[n][12].strip() + " " + game_table[n][22].strip() + " " + game_table[n][26].strip())
+												print(temp)
+												temp = (game_table[n][0].strip() + ' ' + game_table[n][2].strip() + " " + game_table[n][12].strip() + " " + game_table[n][22].strip() + " " + game_table[n][18].strip())
+												print(temp)
+												# Win %
+												temp = game_table[n][10].strip() + ' ' + game_table[n][12].strip() + " " + game_table[n][32].strip() + " " + game_table[n][36].strip()
+												print(temp)
+												temp = game_table[n][0].strip() + ' ' + game_table[n][2].strip() + " " + game_table[n][32].strip() + " " + game_table[n][28].strip()
+												print(temp)
+												# Proj Score
+												temp = game_table[n][0].strip() + ' ' + game_table[n][2].strip() + " " + game_table[n][42].strip() + " " + game_table[n][38].strip()
+												print(temp)
+												temp = game_table[n][10].strip() + ' ' + game_table[n][12].strip() + " " + game_table[n][42].strip() + " " + game_table[n][46].strip()
+												print(temp)
+												# Money Line
+												temp = game_table[n][10].strip() + ' ' + game_table[n][12].strip() + " " + game_table[n][54].strip() + " " + game_table[n][60].strip()
+												print(temp)
+												temp = game_table[n][0].strip() + ' ' + game_table[n][2].strip() + " " + game_table[n][54].strip() + " " + game_table[n][48].strip()
+												# Total
+												temp = game_table[n][10].strip() + ' ' + game_table[n][12].strip() + " " + game_table[n][68].strip() + " " + game_table[n][62].strip()
+												print(temp)
+												temp = game_table[n][10].strip() + ' ' + game_table[n][12].strip() + " " + game_table[n][68].strip() + " " + game_table[n][74].strip()
+												print(temp)
+												print('\n')
+
 										# store data
 										# query(games_insert,
 										# 	sport,
@@ -251,14 +339,6 @@ if __name__ == '__main__':
 										# 	data[46], data[54][1:], data[50], data[36][1:], data[40],
 										# 	data[66], data[74][1:], data[70][:len(data[70]) - 3], data[56][1:], data[60][:len(data[60]) - 3]
 										# )
-
-										# print(data[10].strip() + ' ' + data[12].strip())
-										# print(data[0].strip() + ' ' + data[2].strip())
-										# print('{}-{}-{} {}: {}: 00'.format(year, numstr(month_num), numstr(day), numstr(hour), numstr(minute)))
-										# print(data[24].replace('%', ''), data[16].replace('%', ''))
-										# print(data[34], data[26])
-										# print(data[46], data[54][1:], data[50], data[36][1:], data[40])
-										# print(data[66], data[74][1:], data[70][:len(data[70]) - 3],data[56][1:], data[60][:len(data[60]) - 3])
 
 									# oops
 									except:pass
@@ -276,89 +356,108 @@ if __name__ == '__main__':
 					else: break
 			# oops
 			except: 
-				print('no table')
 				pass
+			
 
 			# get odds data
-			# if not special_odds and do_this:
-			# 	driver.get(odds_url.format(sport.lower()))
-			# 	wait_for_element(odds_table_class)
-			# 	for table in driver.find_elements_by_class_name(odds_table_class):
+			if not special_odds and do_this:
+				driver.get(odds_url.format(sport.lower()))
+				wait_for_element(odds_table_class)
 
-			# 		# odds
-			# 		if today not in already['odds'][sport]:
-			# 			already['odds'][sport].append(sport)
+				count = -1
+				for table in driver.find_elements_by_class_name(odds_table_class):
+					count += 1
 
-			# 			# prepare for error
-			# 			try:
+					# odds
+					if today not in already['odds'][sport]:
+						already['odds'][sport].append(sport)
 
-			# 				# start
-			# 				row = {'league': sport}
+						# prepare for error
+						try:
 
-			# 				# date / time
-			# 				data_cell = driver.find_element_by_class_name('chalk-cell.chalk-cell-date')
-			# 				month, day, year, hour, minute, apm = re.findall(odds_date_key, data_cell.text, re.DOTALL)[0]
-			# 				hour = int(hour) + 1
-			# 				if apm == 'P': hour += 12
-			# 				if hour == 24: hour = 0
-			# 				row['date'] = '{}-{}-{} {}:{}:00'.format(
-			# 					year, numstr(months.index(month) + 1), day,
-			# 					hour, minute
-			# 				)
+							# start
+							row = {'league': sport}
+							data = htt(table.get_attribute('innerHTML')).split('\n')
 
-			# 				# team names
-			# 				cell = driver.find_element_by_class_name('chalk-cell.chalk-team.chalk-team-away')
-			# 				if cell: row['away'] = cell.text.strip()
+							if(len(data) > 49):
+								print(data)
+								print(len(data))
+								print('\n')
+								
+								# date / time
+								data_cell = driver.find_elements_by_class_name('chalk-cell.chalk-cell-date')[count]
+								month, day, year, hour, minute, apm = re.findall(odds_date_key, data_cell.text, re.DOTALL)[0]
+								hour = int(hour) + 1
+								if apm == 'P': hour += 12
+								if hour == 24: hour = 0
+								row['date'] = '{}-{}-{} {}:{}:00'.format(year, numstr(months.index(month) + 1), day, hour, minute)
 
-			# 				cell = driver.find_element_by_class_name('chalk-cell.chalk-team.chalk-team-home')
-			# 				if cell: row['home'] = cell.text.strip()
+								# team names
+								cell = driver.find_elements_by_class_name('chalk-cell.chalk-team.chalk-team-away')[count]
+								if cell: row['away'] = cell.text.strip()
 
-			# 				# odds
-			# 				row['odds'] = {}
-			# 				for odds_table in table.find_elements_by_class_name('chalk-odds-scroller'):
-			# 					for column in odds_table.find_elements_by_tag_name('td'):
+								cell = driver.find_elements_by_class_name('chalk-cell.chalk-team.chalk-team-home')[count]
+								if cell: row['home'] = cell.text.strip()
 
-			# 						column_name = column.find_element_by_class_name('chalk-cell.chalk-header').text.strip()
-			# 						row['odds'][column_name] = {}
+								# odds
+								row['odds'] = {}
+								for odds_table in table.find_elements_by_class_name('chalk-odds-scroller'):
+									for column in odds_table.find_elements_by_tag_name('td'):
 
-			# 						for class_id, name in (
-			# 								('chalk-cell.chalk-odds.chalk-odds-away', 'away-odds'),
-			# 								('chalk-cell.chalk-odds.chalk-odds-home', 'home-odds'),
-			# 								('chalk-price.chalk-price-total', 'price-total'),
-			# 								('chalk-price.chalk-price-overunder', 'overunder'),
-			# 						):
-			# 							cell = column.find_element_by_class_name(class_id)
-			# 							if cell: row['odds'][column_name][name] = cell.text.strip()
-			# 							else: row['odds'][column_name][name] = ''
+										column_name = column.find_element_by_class_name('chalk-cell.chalk-header').text.strip()
+										row['odds'][column_name] = {}
 
-			# 				# save data
-			# 				for odds in row['odds']:
+										for class_id, name in (
+												('chalk-cell.chalk-odds.chalk-odds-away', 'away-odds'),
+												('chalk-cell.chalk-odds.chalk-odds-home', 'home-odds'),
+												('chalk-price.chalk-price-total', 'price-total'),
+												('chalk-price.chalk-price-overunder', 'overunder'),
+										):
+											cell = column.find_element_by_class_name(class_id)
+											if cell: row['odds'][column_name][name] = cell.text.strip()
+											else: row['odds'][column_name][name] = ''
 
-			# 					if row['odds'][odds]['home-odds']:
-			# 						value = row['odds'][odds]['home-odds'].strip().split()
-			# 						if len(value) == 1: home_odds = (float(value), 0)
-			# 						else: home_odds = tuple(float(item) for item in value)
-			# 					else: home_odds = (0, 0)
+								# # save data
+								for odds in row['odds']:
 
-			# 					if row['odds'][odds]['away-odds']:
-			# 						value = row['odds'][odds]['away-odds'].strip().split()
-			# 						if len(value) == 1: away_odds = (float(value), 0)
-			# 						else: away_odds = tuple(float(item) for item in value)
-			# 					else: away_odds = (0, 0)
+									if row['odds'][odds]['home-odds']:
+										value = row['odds'][odds]['home-odds'].strip().split()
+										if len(value) == 1: home_odds = (float(value[0]), 0)
+										else: home_odds = tuple(float(item) for item in value)
+									else: 
+										home_odds = (0, 0)
 
-			# 					overunder = row['odds'][odds]['overunder'].split('\n')
+									if row['odds'][odds]['away-odds']:
+										value = row['odds'][odds]['away-odds'].strip().split()
+										if len(value) == 1: away_odds = (float(value[0]), 0)
+										else: away_odds = tuple(float(item) for item in value)
+									else: away_odds = (0, 0)
+								
 
-			# 					query(odds_insert,
-			# 						  sport,
-			# 						  row['home'], row['away'],
-			# 						  row['date'],
-			# 						  odds, home_odds[0], home_odds[1], away_odds[0], away_odds[1],
-			# 						  row['odds'][odds]['price-total'],
-			# 						  overunder[0][1:], overunder[1][1:],
-			# 					)
+									overunder = row['odds'][odds]['overunder'].split('\n')
 
-			# 			# oops
-			# 			except:pass
+									# query(odds_insert,
+									# 	  sport,
+									# 	  row['home'], row['away'],
+									# 	  row['date'],
+									# 	  odds, home_odds[0], home_odds[1], away_odds[0], away_odds[1],
+									# 	  row['odds'][odds]['price-total'],
+									# 	  overunder[0][1:], overunder[1][1:],
+									# )
+									try:
+										print(row['home'], row['away'])
+										print(row['date'])
+										print(odds, home_odds[0], home_odds[1], away_odds[0], away_odds[1])
+										print(row['odds'][odds]['price-total'])
+										print(overunder[0][1:], overunder[1][1:])
+									except:
+										continue
+							else:
+								pass
+
+						# oops
+						except:pass
+								
 
 	# finished
 	driver.close()
