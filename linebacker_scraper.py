@@ -81,9 +81,13 @@ if __name__ == '__main__':
 	
 
 	# start driver
-	driver_options = webdriver.firefox.options.Options()
-	driver_options.headless = True
-	driver = webdriver.Firefox(options=driver_options)
+	# driver_options = webdriver.firefox.options.Options()
+	# driver_options.headless = True
+	# driver = webdriver.Firefox(options=driver_options)
+	driver_options = webdriver.ChromeOptions()
+	driver_options.add_argument('headless')
+	driver_options.add_argument('window-size=1200x600')
+	driver = webdriver.Chrome(chrome_options=driver_options)
 
 	# log into page
 	driver.get(signin_url)
