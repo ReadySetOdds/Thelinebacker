@@ -62,7 +62,7 @@ def numstr(value):
 
 
 def convert(seconds):
-    return time.strftime("%H:%M:%S", time.gmtime(n))
+    return time.strftime("%H:%M:%S", time.gmtime(seconds))
 
 # main
 if __name__ == '__main__':
