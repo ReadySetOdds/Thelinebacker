@@ -1,0 +1,1206 @@
+[INFO  - 2020-08-27T09:33:05.954Z] GhostDriver - Main - running on port 50768
+[INFO  - 2020-08-27T09:33:06.228Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
+[INFO  - 2020-08-27T09:33:06.228Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.customHeaders:  - {}
+[INFO  - 2020-08-27T09:33:06.228Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"mac-unknown-64bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2020-08-27T09:33:06.228Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 4fcb3bf0-e848-11ea-86ce-bdd06a76ac18
+[ERROR - 2020-08-27T09:33:14.964Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - msg: Unhandled promise rejection Error: Loading chunk vendors~web_widget failed.
+(missing: https://static.zdassets.com/web_widget/latest/vendors~web_widget.fbaa3b98f997b533cef2.chunk.js)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:33:14.964Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - stack:
+  (anonymous function) (https://static.zdassets.com/web_widget/latest/preload.1c8ba4eedb07b9300773.js:1)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:33:18.702Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520798675
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:33:20.380Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520800353
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:33:21.723Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520801563
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:33:22.755Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520802731
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:33:23.674Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520803648
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:33:30.562Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520810334
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:33:32.252Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520811765
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:33:33.388Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - msg: Unhandled promise rejection Error: Loading chunk vendors~web_widget failed.
+(missing: https://static.zdassets.com/web_widget/latest/vendors~web_widget.fbaa3b98f997b533cef2.chunk.js)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:33:33.388Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - stack:
+  (anonymous function) (https://static.zdassets.com/web_widget/latest/preload.1c8ba4eedb07b9300773.js:1)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:33:33.396Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520813341
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:33:33.684Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - msg: Unhandled promise rejection Error: Loading chunk vendors~web_widget failed.
+(missing: https://static.zdassets.com/web_widget/latest/vendors~web_widget.fbaa3b98f997b533cef2.chunk.js)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:33:33.685Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - stack:
+  (anonymous function) (https://static.zdassets.com/web_widget/latest/preload.1c8ba4eedb07b9300773.js:1)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:33:34.381Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520814354
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:33:35.322Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520815297
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:33:36.243Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520816221
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:33:37.155Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520817130
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:33:38.270Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520818136
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:33:39.285Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520819263
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:33:40.220Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520820196
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:33:41.158Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520821114
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:33:42.130Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520822072
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:33:43.040Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520823019
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:33:43.972Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520823948
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:33:44.951Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520824881
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:33:45.864Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520825834
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:33:46.803Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520826748
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:33:47.722Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520827692
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:33:48.632Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520828606
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:33:49.541Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520829516
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:33:58.836Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520838338
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:33:59.686Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - msg: TypeError: undefined is not a constructor (evaluating 'document.querySelectorAll('#chalk-embeded-odds-markup .chalk-odds-wrapper table').forEach')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:33:59.686Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - stack:
+  overflowShadow (https://odds.oddsshark.com/widget/598/nfl:64)
+  (anonymous function) (https://odds.oddsshark.com/widget/598/nfl:58)
+  t (https://www.predictionmachine.com/odds/nfl:1)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:00.353Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520840200
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:00.367Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - msg: TypeError: undefined is not a constructor (evaluating 'document.querySelectorAll('#chalk-embeded-odds-markup .chalk-odds-wrapper table').forEach')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:00.367Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - stack:
+  overflowShadow (https://odds.oddsshark.com/widget/598/nfl:64)
+  (anonymous function) (https://odds.oddsshark.com/widget/598/nfl:91)
+  t (https://www.predictionmachine.com/odds/nfl:1)
+  renderBase64 (:0)
+  createFailedCommandEH (phantomjs://platform/errors.js:229)
+  handleFailedCommandEH (phantomjs://platform/errors.js:235)
+  _handleLocateCommand (phantomjs://code/webelementlocator.js:240)
+  (anonymous function) (phantomjs://code/webelementlocator.js:230)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:00.524Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - msg: TypeError: undefined is not a constructor (evaluating 'document.querySelectorAll('#chalk-embeded-odds-markup .chalk-odds-wrapper table').forEach')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:00.524Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - stack:
+  overflowShadow (https://odds.oddsshark.com/widget/598/nfl:64)
+  (anonymous function) (https://odds.oddsshark.com/widget/598/nfl:91)
+  t (https://www.predictionmachine.com/odds/nfl:1)
+  renderBase64 (:0)
+  createFailedCommandEH (phantomjs://platform/errors.js:229)
+  handleFailedCommandEH (phantomjs://platform/errors.js:235)
+  _handleLocateCommand (phantomjs://code/webelementlocator.js:240)
+  (anonymous function) (phantomjs://code/webelementlocator.js:230)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:01.646Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520841645
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:01.658Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - msg: TypeError: undefined is not a constructor (evaluating 'document.querySelectorAll('#chalk-embeded-odds-markup .chalk-odds-wrapper table').forEach')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:01.658Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - stack:
+  overflowShadow (https://odds.oddsshark.com/widget/598/nfl:64)
+  (anonymous function) (https://odds.oddsshark.com/widget/598/nfl:91)
+  t (https://www.predictionmachine.com/odds/nfl:1)
+  renderBase64 (:0)
+  createFailedCommandEH (phantomjs://platform/errors.js:229)
+  handleFailedCommandEH (phantomjs://platform/errors.js:235)
+  _handleLocateCommand (phantomjs://code/webelementlocator.js:240)
+  (anonymous function) (phantomjs://code/webelementlocator.js:230)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:01.762Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - msg: TypeError: undefined is not a constructor (evaluating 'document.querySelectorAll('#chalk-embeded-odds-markup .chalk-odds-wrapper table').forEach')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:01.762Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - stack:
+  overflowShadow (https://odds.oddsshark.com/widget/598/nfl:64)
+  (anonymous function) (https://odds.oddsshark.com/widget/598/nfl:91)
+  t (https://www.predictionmachine.com/odds/nfl:1)
+  renderBase64 (:0)
+  createFailedCommandEH (phantomjs://platform/errors.js:229)
+  handleFailedCommandEH (phantomjs://platform/errors.js:235)
+  _handleLocateCommand (phantomjs://code/webelementlocator.js:240)
+  (anonymous function) (phantomjs://code/webelementlocator.js:230)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:02.437Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - msg: Unhandled promise rejection Error: Loading chunk vendors~web_widget failed.
+(missing: https://static.zdassets.com/web_widget/latest/vendors~web_widget.fbaa3b98f997b533cef2.chunk.js)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:02.437Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - stack:
+  (anonymous function) (https://static.zdassets.com/web_widget/latest/preload.1c8ba4eedb07b9300773.js:1)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:02.491Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - msg: Unhandled promise rejection Error: Loading chunk vendors~web_widget failed.
+(missing: https://static.zdassets.com/web_widget/latest/vendors~web_widget.fbaa3b98f997b533cef2.chunk.js)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:02.491Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - stack:
+  (anonymous function) (https://static.zdassets.com/web_widget/latest/preload.1c8ba4eedb07b9300773.js:1)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:02.763Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520842739
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:02.778Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - msg: TypeError: undefined is not a constructor (evaluating 'document.querySelectorAll('#chalk-embeded-odds-markup .chalk-odds-wrapper table').forEach')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:02.779Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - stack:
+  overflowShadow (https://odds.oddsshark.com/widget/598/nfl:64)
+  (anonymous function) (https://odds.oddsshark.com/widget/598/nfl:91)
+  t (https://www.predictionmachine.com/odds/nfl:1)
+  renderBase64 (:0)
+  createFailedCommandEH (phantomjs://platform/errors.js:229)
+  handleFailedCommandEH (phantomjs://platform/errors.js:235)
+  _handleLocateCommand (phantomjs://code/webelementlocator.js:240)
+  (anonymous function) (phantomjs://code/webelementlocator.js:230)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:02.872Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - msg: TypeError: undefined is not a constructor (evaluating 'document.querySelectorAll('#chalk-embeded-odds-markup .chalk-odds-wrapper table').forEach')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:02.872Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - stack:
+  overflowShadow (https://odds.oddsshark.com/widget/598/nfl:64)
+  (anonymous function) (https://odds.oddsshark.com/widget/598/nfl:91)
+  t (https://www.predictionmachine.com/odds/nfl:1)
+  renderBase64 (:0)
+  createFailedCommandEH (phantomjs://platform/errors.js:229)
+  handleFailedCommandEH (phantomjs://platform/errors.js:235)
+  _handleLocateCommand (phantomjs://code/webelementlocator.js:240)
+  (anonymous function) (phantomjs://code/webelementlocator.js:230)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:03.869Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520843841
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:03.885Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - msg: TypeError: undefined is not a constructor (evaluating 'document.querySelectorAll('#chalk-embeded-odds-markup .chalk-odds-wrapper table').forEach')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:03.885Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - stack:
+  overflowShadow (https://odds.oddsshark.com/widget/598/nfl:64)
+  (anonymous function) (https://odds.oddsshark.com/widget/598/nfl:91)
+  t (https://www.predictionmachine.com/odds/nfl:1)
+  renderBase64 (:0)
+  createFailedCommandEH (phantomjs://platform/errors.js:229)
+  handleFailedCommandEH (phantomjs://platform/errors.js:235)
+  _handleLocateCommand (phantomjs://code/webelementlocator.js:240)
+  (anonymous function) (phantomjs://code/webelementlocator.js:230)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:03.987Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - msg: TypeError: undefined is not a constructor (evaluating 'document.querySelectorAll('#chalk-embeded-odds-markup .chalk-odds-wrapper table').forEach')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:03.987Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - stack:
+  overflowShadow (https://odds.oddsshark.com/widget/598/nfl:64)
+  (anonymous function) (https://odds.oddsshark.com/widget/598/nfl:91)
+  t (https://www.predictionmachine.com/odds/nfl:1)
+  renderBase64 (:0)
+  createFailedCommandEH (phantomjs://platform/errors.js:229)
+  handleFailedCommandEH (phantomjs://platform/errors.js:235)
+  _handleLocateCommand (phantomjs://code/webelementlocator.js:240)
+  (anonymous function) (phantomjs://code/webelementlocator.js:230)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:05.010Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520844983
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:05.024Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - msg: TypeError: undefined is not a constructor (evaluating 'document.querySelectorAll('#chalk-embeded-odds-markup .chalk-odds-wrapper table').forEach')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:05.025Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - stack:
+  overflowShadow (https://odds.oddsshark.com/widget/598/nfl:64)
+  (anonymous function) (https://odds.oddsshark.com/widget/598/nfl:91)
+  t (https://www.predictionmachine.com/odds/nfl:1)
+  renderBase64 (:0)
+  createFailedCommandEH (phantomjs://platform/errors.js:229)
+  handleFailedCommandEH (phantomjs://platform/errors.js:235)
+  _handleLocateCommand (phantomjs://code/webelementlocator.js:240)
+  (anonymous function) (phantomjs://code/webelementlocator.js:230)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:05.119Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - msg: TypeError: undefined is not a constructor (evaluating 'document.querySelectorAll('#chalk-embeded-odds-markup .chalk-odds-wrapper table').forEach')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:05.119Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - stack:
+  overflowShadow (https://odds.oddsshark.com/widget/598/nfl:64)
+  (anonymous function) (https://odds.oddsshark.com/widget/598/nfl:91)
+  t (https://www.predictionmachine.com/odds/nfl:1)
+  renderBase64 (:0)
+  createFailedCommandEH (phantomjs://platform/errors.js:229)
+  handleFailedCommandEH (phantomjs://platform/errors.js:235)
+  _handleLocateCommand (phantomjs://code/webelementlocator.js:240)
+  (anonymous function) (phantomjs://code/webelementlocator.js:230)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:06.142Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520846089
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:06.154Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - msg: TypeError: undefined is not a constructor (evaluating 'document.querySelectorAll('#chalk-embeded-odds-markup .chalk-odds-wrapper table').forEach')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:06.155Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - stack:
+  overflowShadow (https://odds.oddsshark.com/widget/598/nfl:64)
+  (anonymous function) (https://odds.oddsshark.com/widget/598/nfl:91)
+  t (https://www.predictionmachine.com/odds/nfl:1)
+  renderBase64 (:0)
+  createFailedCommandEH (phantomjs://platform/errors.js:229)
+  handleFailedCommandEH (phantomjs://platform/errors.js:235)
+  _handleLocateCommand (phantomjs://code/webelementlocator.js:240)
+  (anonymous function) (phantomjs://code/webelementlocator.js:230)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:06.248Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - msg: TypeError: undefined is not a constructor (evaluating 'document.querySelectorAll('#chalk-embeded-odds-markup .chalk-odds-wrapper table').forEach')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:06.249Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - stack:
+  overflowShadow (https://odds.oddsshark.com/widget/598/nfl:64)
+  (anonymous function) (https://odds.oddsshark.com/widget/598/nfl:91)
+  t (https://www.predictionmachine.com/odds/nfl:1)
+  renderBase64 (:0)
+  createFailedCommandEH (phantomjs://platform/errors.js:229)
+  handleFailedCommandEH (phantomjs://platform/errors.js:235)
+  _handleLocateCommand (phantomjs://code/webelementlocator.js:240)
+  (anonymous function) (phantomjs://code/webelementlocator.js:230)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:07.395Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520847368
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:07.411Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - msg: TypeError: undefined is not a constructor (evaluating 'document.querySelectorAll('#chalk-embeded-odds-markup .chalk-odds-wrapper table').forEach')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:07.411Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - stack:
+  overflowShadow (https://odds.oddsshark.com/widget/598/nfl:64)
+  (anonymous function) (https://odds.oddsshark.com/widget/598/nfl:91)
+  t (https://www.predictionmachine.com/odds/nfl:1)
+  renderBase64 (:0)
+  createFailedCommandEH (phantomjs://platform/errors.js:229)
+  handleFailedCommandEH (phantomjs://platform/errors.js:235)
+  _handleLocateCommand (phantomjs://code/webelementlocator.js:240)
+  (anonymous function) (phantomjs://code/webelementlocator.js:230)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:07.521Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - msg: TypeError: undefined is not a constructor (evaluating 'document.querySelectorAll('#chalk-embeded-odds-markup .chalk-odds-wrapper table').forEach')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:07.521Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - stack:
+  overflowShadow (https://odds.oddsshark.com/widget/598/nfl:64)
+  (anonymous function) (https://odds.oddsshark.com/widget/598/nfl:91)
+  t (https://www.predictionmachine.com/odds/nfl:1)
+  renderBase64 (:0)
+  createFailedCommandEH (phantomjs://platform/errors.js:229)
+  handleFailedCommandEH (phantomjs://platform/errors.js:235)
+  _handleLocateCommand (phantomjs://code/webelementlocator.js:240)
+  (anonymous function) (phantomjs://code/webelementlocator.js:230)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:08.524Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520848498
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:08.536Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - msg: TypeError: undefined is not a constructor (evaluating 'document.querySelectorAll('#chalk-embeded-odds-markup .chalk-odds-wrapper table').forEach')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:08.536Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - stack:
+  overflowShadow (https://odds.oddsshark.com/widget/598/nfl:64)
+  (anonymous function) (https://odds.oddsshark.com/widget/598/nfl:91)
+  t (https://www.predictionmachine.com/odds/nfl:1)
+  renderBase64 (:0)
+  createFailedCommandEH (phantomjs://platform/errors.js:229)
+  handleFailedCommandEH (phantomjs://platform/errors.js:235)
+  _handleLocateCommand (phantomjs://code/webelementlocator.js:240)
+  (anonymous function) (phantomjs://code/webelementlocator.js:230)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:08.632Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - msg: TypeError: undefined is not a constructor (evaluating 'document.querySelectorAll('#chalk-embeded-odds-markup .chalk-odds-wrapper table').forEach')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:08.632Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - stack:
+  overflowShadow (https://odds.oddsshark.com/widget/598/nfl:64)
+  (anonymous function) (https://odds.oddsshark.com/widget/598/nfl:91)
+  t (https://www.predictionmachine.com/odds/nfl:1)
+  renderBase64 (:0)
+  createFailedCommandEH (phantomjs://platform/errors.js:229)
+  handleFailedCommandEH (phantomjs://platform/errors.js:235)
+  _handleLocateCommand (phantomjs://code/webelementlocator.js:240)
+  (anonymous function) (phantomjs://code/webelementlocator.js:230)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:09.630Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520849603
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:09.642Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - msg: TypeError: undefined is not a constructor (evaluating 'document.querySelectorAll('#chalk-embeded-odds-markup .chalk-odds-wrapper table').forEach')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:09.642Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - stack:
+  overflowShadow (https://odds.oddsshark.com/widget/598/nfl:64)
+  (anonymous function) (https://odds.oddsshark.com/widget/598/nfl:91)
+  t (https://www.predictionmachine.com/odds/nfl:1)
+  renderBase64 (:0)
+  createFailedCommandEH (phantomjs://platform/errors.js:229)
+  handleFailedCommandEH (phantomjs://platform/errors.js:235)
+  _handleLocateCommand (phantomjs://code/webelementlocator.js:240)
+  (anonymous function) (phantomjs://code/webelementlocator.js:230)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:09.734Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - msg: TypeError: undefined is not a constructor (evaluating 'document.querySelectorAll('#chalk-embeded-odds-markup .chalk-odds-wrapper table').forEach')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:09.734Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - stack:
+  overflowShadow (https://odds.oddsshark.com/widget/598/nfl:64)
+  (anonymous function) (https://odds.oddsshark.com/widget/598/nfl:91)
+  t (https://www.predictionmachine.com/odds/nfl:1)
+  renderBase64 (:0)
+  createFailedCommandEH (phantomjs://platform/errors.js:229)
+  handleFailedCommandEH (phantomjs://platform/errors.js:235)
+  _handleLocateCommand (phantomjs://code/webelementlocator.js:240)
+  (anonymous function) (phantomjs://code/webelementlocator.js:230)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:10.745Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520850722
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:10.757Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - msg: TypeError: undefined is not a constructor (evaluating 'document.querySelectorAll('#chalk-embeded-odds-markup .chalk-odds-wrapper table').forEach')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:10.757Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - stack:
+  overflowShadow (https://odds.oddsshark.com/widget/598/nfl:64)
+  (anonymous function) (https://odds.oddsshark.com/widget/598/nfl:91)
+  t (https://www.predictionmachine.com/odds/nfl:1)
+  renderBase64 (:0)
+  createFailedCommandEH (phantomjs://platform/errors.js:229)
+  handleFailedCommandEH (phantomjs://platform/errors.js:235)
+  _handleLocateCommand (phantomjs://code/webelementlocator.js:240)
+  (anonymous function) (phantomjs://code/webelementlocator.js:230)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:10.849Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - msg: TypeError: undefined is not a constructor (evaluating 'document.querySelectorAll('#chalk-embeded-odds-markup .chalk-odds-wrapper table').forEach')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:10.849Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - stack:
+  overflowShadow (https://odds.oddsshark.com/widget/598/nfl:64)
+  (anonymous function) (https://odds.oddsshark.com/widget/598/nfl:91)
+  t (https://www.predictionmachine.com/odds/nfl:1)
+  renderBase64 (:0)
+  createFailedCommandEH (phantomjs://platform/errors.js:229)
+  handleFailedCommandEH (phantomjs://platform/errors.js:235)
+  _handleLocateCommand (phantomjs://code/webelementlocator.js:240)
+  (anonymous function) (phantomjs://code/webelementlocator.js:230)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:11.840Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520851817
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:11.853Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - msg: TypeError: undefined is not a constructor (evaluating 'document.querySelectorAll('#chalk-embeded-odds-markup .chalk-odds-wrapper table').forEach')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:11.854Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - stack:
+  overflowShadow (https://odds.oddsshark.com/widget/598/nfl:64)
+  (anonymous function) (https://odds.oddsshark.com/widget/598/nfl:91)
+  t (https://www.predictionmachine.com/odds/nfl:1)
+  renderBase64 (:0)
+  createFailedCommandEH (phantomjs://platform/errors.js:229)
+  handleFailedCommandEH (phantomjs://platform/errors.js:235)
+  _handleLocateCommand (phantomjs://code/webelementlocator.js:240)
+  (anonymous function) (phantomjs://code/webelementlocator.js:230)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:11.948Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - msg: TypeError: undefined is not a constructor (evaluating 'document.querySelectorAll('#chalk-embeded-odds-markup .chalk-odds-wrapper table').forEach')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:11.948Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - stack:
+  overflowShadow (https://odds.oddsshark.com/widget/598/nfl:64)
+  (anonymous function) (https://odds.oddsshark.com/widget/598/nfl:91)
+  t (https://www.predictionmachine.com/odds/nfl:1)
+  renderBase64 (:0)
+  createFailedCommandEH (phantomjs://platform/errors.js:229)
+  handleFailedCommandEH (phantomjs://platform/errors.js:235)
+  _handleLocateCommand (phantomjs://code/webelementlocator.js:240)
+  (anonymous function) (phantomjs://code/webelementlocator.js:230)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:12.955Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520852917
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:12.967Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - msg: TypeError: undefined is not a constructor (evaluating 'document.querySelectorAll('#chalk-embeded-odds-markup .chalk-odds-wrapper table').forEach')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:12.967Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - stack:
+  overflowShadow (https://odds.oddsshark.com/widget/598/nfl:64)
+  (anonymous function) (https://odds.oddsshark.com/widget/598/nfl:91)
+  t (https://www.predictionmachine.com/odds/nfl:1)
+  renderBase64 (:0)
+  createFailedCommandEH (phantomjs://platform/errors.js:229)
+  handleFailedCommandEH (phantomjs://platform/errors.js:235)
+  _handleLocateCommand (phantomjs://code/webelementlocator.js:240)
+  (anonymous function) (phantomjs://code/webelementlocator.js:230)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:13.058Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - msg: TypeError: undefined is not a constructor (evaluating 'document.querySelectorAll('#chalk-embeded-odds-markup .chalk-odds-wrapper table').forEach')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:13.058Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - stack:
+  overflowShadow (https://odds.oddsshark.com/widget/598/nfl:64)
+  (anonymous function) (https://odds.oddsshark.com/widget/598/nfl:91)
+  t (https://www.predictionmachine.com/odds/nfl:1)
+  renderBase64 (:0)
+  createFailedCommandEH (phantomjs://platform/errors.js:229)
+  handleFailedCommandEH (phantomjs://platform/errors.js:235)
+  _handleLocateCommand (phantomjs://code/webelementlocator.js:240)
+  (anonymous function) (phantomjs://code/webelementlocator.js:230)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:14.196Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520854144
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:14.211Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - msg: TypeError: undefined is not a constructor (evaluating 'document.querySelectorAll('#chalk-embeded-odds-markup .chalk-odds-wrapper table').forEach')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:14.211Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - stack:
+  overflowShadow (https://odds.oddsshark.com/widget/598/nfl:64)
+  (anonymous function) (https://odds.oddsshark.com/widget/598/nfl:91)
+  t (https://www.predictionmachine.com/odds/nfl:1)
+  renderBase64 (:0)
+  createFailedCommandEH (phantomjs://platform/errors.js:229)
+  handleFailedCommandEH (phantomjs://code/webelementlocator.js:235)
+  _handleLocateCommand (phantomjs://code/webelementlocator.js:240)
+  (anonymous function) (phantomjs://code/webelementlocator.js:230)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:14.315Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - msg: TypeError: undefined is not a constructor (evaluating 'document.querySelectorAll('#chalk-embeded-odds-markup .chalk-odds-wrapper table').forEach')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:14.315Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - stack:
+  overflowShadow (https://odds.oddsshark.com/widget/598/nfl:64)
+  (anonymous function) (https://odds.oddsshark.com/widget/598/nfl:91)
+  t (https://www.predictionmachine.com/odds/nfl:1)
+  renderBase64 (:0)
+  createFailedCommandEH (phantomjs://platform/errors.js:229)
+  handleFailedCommandEH (phantomjs://code/webelementlocator.js:235)
+  _handleLocateCommand (phantomjs://code/webelementlocator.js:240)
+  (anonymous function) (phantomjs://code/webelementlocator.js:230)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:15.320Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520855286
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:15.332Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - msg: TypeError: undefined is not a constructor (evaluating 'document.querySelectorAll('#chalk-embeded-odds-markup .chalk-odds-wrapper table').forEach')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:15.332Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - stack:
+  overflowShadow (https://odds.oddsshark.com/widget/598/nfl:64)
+  (anonymous function) (https://odds.oddsshark.com/widget/598/nfl:91)
+  t (https://www.predictionmachine.com/odds/nfl:1)
+  renderBase64 (:0)
+  createFailedCommandEH (phantomjs://platform/errors.js:229)
+  handleFailedCommandEH (phantomjs://code/webelementlocator.js:235)
+  _handleLocateCommand (phantomjs://code/webelementlocator.js:240)
+  (anonymous function) (phantomjs://code/webelementlocator.js:230)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:15.426Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - msg: TypeError: undefined is not a constructor (evaluating 'document.querySelectorAll('#chalk-embeded-odds-markup .chalk-odds-wrapper table').forEach')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:15.426Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - stack:
+  overflowShadow (https://odds.oddsshark.com/widget/598/nfl:64)
+  (anonymous function) (https://odds.oddsshark.com/widget/598/nfl:91)
+  t (https://www.predictionmachine.com/odds/nfl:1)
+  renderBase64 (:0)
+  createFailedCommandEH (phantomjs://platform/errors.js:229)
+  handleFailedCommandEH (phantomjs://code/webelementlocator.js:235)
+  _handleLocateCommand (phantomjs://code/webelementlocator.js:240)
+  (anonymous function) (phantomjs://code/webelementlocator.js:230)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:16.427Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520856392
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:16.440Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - msg: TypeError: undefined is not a constructor (evaluating 'document.querySelectorAll('#chalk-embeded-odds-markup .chalk-odds-wrapper table').forEach')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:16.440Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - stack:
+  overflowShadow (https://odds.oddsshark.com/widget/598/nfl:64)
+  (anonymous function) (https://odds.oddsshark.com/widget/598/nfl:91)
+  t (https://www.predictionmachine.com/odds/nfl:1)
+  renderBase64 (:0)
+  createFailedCommandEH (phantomjs://platform/errors.js:229)
+  handleFailedCommandEH (phantomjs://code/webelementlocator.js:235)
+  _handleLocateCommand (phantomjs://code/webelementlocator.js:240)
+  (anonymous function) (phantomjs://code/webelementlocator.js:230)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:16.529Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - msg: TypeError: undefined is not a constructor (evaluating 'document.querySelectorAll('#chalk-embeded-odds-markup .chalk-odds-wrapper table').forEach')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:16.529Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - stack:
+  overflowShadow (https://odds.oddsshark.com/widget/598/nfl:64)
+  (anonymous function) (https://odds.oddsshark.com/widget/598/nfl:91)
+  t (https://www.predictionmachine.com/odds/nfl:1)
+  renderBase64 (:0)
+  createFailedCommandEH (phantomjs://platform/errors.js:229)
+  handleFailedCommandEH (phantomjs://code/webelementlocator.js:235)
+  _handleLocateCommand (phantomjs://code/webelementlocator.js:240)
+  (anonymous function) (phantomjs://code/webelementlocator.js:230)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:17.524Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520857494
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:17.537Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - msg: TypeError: undefined is not a constructor (evaluating 'document.querySelectorAll('#chalk-embeded-odds-markup .chalk-odds-wrapper table').forEach')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:17.537Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - stack:
+  overflowShadow (https://odds.oddsshark.com/widget/598/nfl:64)
+  (anonymous function) (https://odds.oddsshark.com/widget/598/nfl:91)
+  t (https://www.predictionmachine.com/odds/nfl:1)
+  renderBase64 (:0)
+  createFailedCommandEH (phantomjs://platform/errors.js:229)
+  handleFailedCommandEH (phantomjs://code/webelementlocator.js:235)
+  _handleLocateCommand (phantomjs://code/webelementlocator.js:240)
+  (anonymous function) (phantomjs://code/webelementlocator.js:230)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:17.628Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - msg: TypeError: undefined is not a constructor (evaluating 'document.querySelectorAll('#chalk-embeded-odds-markup .chalk-odds-wrapper table').forEach')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:17.629Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - stack:
+  overflowShadow (https://odds.oddsshark.com/widget/598/nfl:64)
+  (anonymous function) (https://odds.oddsshark.com/widget/598/nfl:91)
+  t (https://www.predictionmachine.com/odds/nfl:1)
+  renderBase64 (:0)
+  createFailedCommandEH (phantomjs://platform/errors.js:229)
+  handleFailedCommandEH (phantomjs://code/webelementlocator.js:235)
+  _handleLocateCommand (phantomjs://code/webelementlocator.js:240)
+  (anonymous function) (phantomjs://code/webelementlocator.js:230)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:26.781Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520866448
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:28.159Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520868025
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:29.344Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520869173
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:29.590Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - msg: Unhandled promise rejection Error: Loading chunk vendors~web_widget failed.
+(missing: https://static.zdassets.com/web_widget/latest/vendors~web_widget.fbaa3b98f997b533cef2.chunk.js)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:29.590Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - stack:
+  (anonymous function) (https://static.zdassets.com/web_widget/latest/preload.1c8ba4eedb07b9300773.js:1)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:29.653Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - msg: Unhandled promise rejection Error: Loading chunk vendors~web_widget failed.
+(missing: https://static.zdassets.com/web_widget/latest/vendors~web_widget.fbaa3b98f997b533cef2.chunk.js)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:29.653Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - stack:
+  (anonymous function) (https://static.zdassets.com/web_widget/latest/preload.1c8ba4eedb07b9300773.js:1)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:30.263Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520870221
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:31.177Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520871156
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:32.090Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520872065
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:32.995Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520872972
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:34.098Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520873959
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:35.062Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520875029
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:35.978Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520875949
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:36.902Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520876870
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:37.814Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520877781
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:38.697Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520878696
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:39.608Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520879578
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:40.505Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520880489
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:41.419Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520881388
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:42.335Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520882304
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:43.241Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520883213
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:44.169Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520884139
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:45.087Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520885060
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:45.987Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520885966
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:54.993Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - msg: TypeError: undefined is not a constructor (evaluating 'document.querySelectorAll('#chalk-embeded-odds-markup .chalk-odds-wrapper table').forEach')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:54.993Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - stack:
+  overflowShadow (https://odds.oddsshark.com/widget/598/ncaaf:64)
+  (anonymous function) (https://odds.oddsshark.com/widget/598/ncaaf:58)
+  t (https://www.predictionmachine.com/odds/ncaaf:1)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:56.507Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - msg: Unhandled promise rejection Error: Loading chunk vendors~web_widget failed.
+(missing: https://static.zdassets.com/web_widget/latest/vendors~web_widget.fbaa3b98f997b533cef2.chunk.js)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:56.507Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - stack:
+  (anonymous function) (https://static.zdassets.com/web_widget/latest/preload.1c8ba4eedb07b9300773.js:1)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:56.508Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - msg: Unhandled promise rejection Error: Loading chunk vendors~web_widget failed.
+(missing: https://static.zdassets.com/web_widget/latest/vendors~web_widget.fbaa3b98f997b533cef2.chunk.js)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:34:56.508Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - stack:
+  (anonymous function) (https://static.zdassets.com/web_widget/latest/preload.1c8ba4eedb07b9300773.js:1)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:35:00.125Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520900032
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:35:01.378Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520901338
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:35:02.281Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520902260
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:35:03.377Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520903207
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:35:04.351Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - msg: Unhandled promise rejection Error: Loading chunk vendors~web_widget failed.
+(missing: https://static.zdassets.com/web_widget/latest/vendors~web_widget.fbaa3b98f997b533cef2.chunk.js)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:35:04.351Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - stack:
+  (anonymous function) (https://static.zdassets.com/web_widget/latest/preload.1c8ba4eedb07b9300773.js:1)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:35:04.392Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - msg: Unhandled promise rejection Error: Loading chunk vendors~web_widget failed.
+(missing: https://static.zdassets.com/web_widget/latest/vendors~web_widget.fbaa3b98f997b533cef2.chunk.js)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:35:04.392Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - stack:
+  (anonymous function) (https://static.zdassets.com/web_widget/latest/preload.1c8ba4eedb07b9300773.js:1)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:35:11.265Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - msg: TypeError: undefined is not a constructor (evaluating 'document.querySelectorAll('#chalk-embeded-odds-markup .chalk-odds-wrapper table').forEach')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:35:11.265Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - stack:
+  overflowShadow (https://odds.oddsshark.com/widget/598/nba:64)
+  (anonymous function) (https://odds.oddsshark.com/widget/598/nba:58)
+  t (https://www.predictionmachine.com/odds/nba:1)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:35:12.293Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - msg: Unhandled promise rejection Error: Loading chunk vendors~web_widget failed.
+(missing: https://static.zdassets.com/web_widget/latest/vendors~web_widget.fbaa3b98f997b533cef2.chunk.js)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:35:12.294Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - stack:
+  (anonymous function) (https://static.zdassets.com/web_widget/latest/preload.1c8ba4eedb07b9300773.js:1)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:35:12.320Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - msg: Unhandled promise rejection Error: Loading chunk vendors~web_widget failed.
+(missing: https://static.zdassets.com/web_widget/latest/vendors~web_widget.fbaa3b98f997b533cef2.chunk.js)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:35:12.320Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - stack:
+  (anonymous function) (https://static.zdassets.com/web_widget/latest/preload.1c8ba4eedb07b9300773.js:1)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:35:22.807Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520922432
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:35:24.700Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520923936
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:35:26.506Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - msg: Unhandled promise rejection Error: Loading chunk vendors~web_widget failed.
+(missing: https://static.zdassets.com/web_widget/latest/vendors~web_widget.fbaa3b98f997b533cef2.chunk.js)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:35:26.506Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - stack:
+  (anonymous function) (https://static.zdassets.com/web_widget/latest/preload.1c8ba4eedb07b9300773.js:1)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:35:26.506Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - msg: Unhandled promise rejection Error: Loading chunk vendors~web_widget failed.
+(missing: https://static.zdassets.com/web_widget/latest/vendors~web_widget.fbaa3b98f997b533cef2.chunk.js)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:35:26.507Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - stack:
+  (anonymous function) (https://static.zdassets.com/web_widget/latest/preload.1c8ba4eedb07b9300773.js:1)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:35:26.703Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520926649
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:35:27.654Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520927630
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:35:28.598Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520928573
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:35:29.519Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520929495
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:35:30.479Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520930423
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:35:31.400Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520931378
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:35:32.414Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520932388
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:35:33.341Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520933318
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:35:34.279Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520934250
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:35:35.206Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520935183
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:35:36.153Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520936124
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:35:37.086Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520937062
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:35:38.020Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520937990
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:35:38.952Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520938918
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:35:39.910Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520939882
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:35:40.833Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520940807
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:35:41.760Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520941729
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:35:51.579Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - msg: TypeError: undefined is not a constructor (evaluating 'document.querySelectorAll('#chalk-embeded-odds-markup .chalk-odds-wrapper table').forEach')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:35:51.579Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - stack:
+  overflowShadow (https://odds.oddsshark.com/widget/598/ncaab:64)
+  (anonymous function) (https://odds.oddsshark.com/widget/598/ncaab:58)
+  t (https://www.predictionmachine.com/odds/ncaab:1)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:35:51.585Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520950110
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:35:51.768Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - msg: TypeError: undefined is not a constructor (evaluating 'document.querySelectorAll('#chalk-embeded-odds-markup .chalk-odds-wrapper table').forEach')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:35:51.768Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - stack:
+  overflowShadow (https://odds.oddsshark.com/widget/598/ncaab:64)
+  (anonymous function) (https://odds.oddsshark.com/widget/598/ncaab:91)
+  t (https://www.predictionmachine.com/odds/ncaab:1)
+  renderBase64 (:0)
+  createFailedCommandEH (phantomjs://platform/errors.js:229)
+  handleFailedCommandEH (phantomjs://platform/errors.js:235)
+  _handleLocateCommand (phantomjs://code/webelementlocator.js:240)
+  (anonymous function) (phantomjs://code/webelementlocator.js:230)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:35:52.341Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - msg: TypeError: undefined is not a constructor (evaluating 'document.querySelectorAll('#chalk-embeded-odds-markup .chalk-odds-wrapper table').forEach')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:35:52.341Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - stack:
+  overflowShadow (https://odds.oddsshark.com/widget/598/ncaab:64)
+  (anonymous function) (https://odds.oddsshark.com/widget/598/ncaab:91)
+  t (https://www.predictionmachine.com/odds/ncaab:1)
+  renderBase64 (:0)
+  createFailedCommandEH (phantomjs://platform/errors.js:229)
+  handleFailedCommandEH (phantomjs://platform/errors.js:235)
+  _handleLocateCommand (phantomjs://code/webelementlocator.js:240)
+  (anonymous function) (phantomjs://code/webelementlocator.js:230)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:35:53.722Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - msg: Unhandled promise rejection Error: Loading chunk vendors~web_widget failed.
+(missing: https://static.zdassets.com/web_widget/latest/vendors~web_widget.fbaa3b98f997b533cef2.chunk.js)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:35:53.722Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - stack:
+  (anonymous function) (https://static.zdassets.com/web_widget/latest/preload.1c8ba4eedb07b9300773.js:1)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:35:53.749Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - msg: Unhandled promise rejection Error: Loading chunk vendors~web_widget failed.
+(missing: https://static.zdassets.com/web_widget/latest/vendors~web_widget.fbaa3b98f997b533cef2.chunk.js)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:35:53.749Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - stack:
+  (anonymous function) (https://static.zdassets.com/web_widget/latest/preload.1c8ba4eedb07b9300773.js:1)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:35:53.966Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520953943
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:35:53.982Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - msg: TypeError: undefined is not a constructor (evaluating 'document.querySelectorAll('#chalk-embeded-odds-markup .chalk-odds-wrapper table').forEach')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:35:53.982Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - stack:
+  overflowShadow (https://odds.oddsshark.com/widget/598/ncaab:64)
+  (anonymous function) (https://odds.oddsshark.com/widget/598/ncaab:91)
+  t (https://www.predictionmachine.com/odds/ncaab:1)
+  renderBase64 (:0)
+  createFailedCommandEH (phantomjs://platform/errors.js:229)
+  handleFailedCommandEH (phantomjs://platform/errors.js:235)
+  _handleLocateCommand (phantomjs://code/webelementlocator.js:240)
+  (anonymous function) (phantomjs://code/webelementlocator.js:230)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:35:54.858Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - msg: TypeError: undefined is not a constructor (evaluating 'document.querySelectorAll('#chalk-embeded-odds-markup .chalk-odds-wrapper table').forEach')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:35:54.858Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - stack:
+  overflowShadow (https://odds.oddsshark.com/widget/598/ncaab:64)
+  (anonymous function) (https://odds.oddsshark.com/widget/598/ncaab:91)
+  t (https://www.predictionmachine.com/odds/ncaab:1)
+  renderBase64 (:0)
+  createFailedCommandEH (phantomjs://platform/errors.js:229)
+  handleFailedCommandEH (phantomjs://platform/errors.js:235)
+  _handleLocateCommand (phantomjs://code/webelementlocator.js:240)
+  (anonymous function) (phantomjs://code/webelementlocator.js:230)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:35:57.118Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520957082
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:35:57.133Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - msg: TypeError: undefined is not a constructor (evaluating 'document.querySelectorAll('#chalk-embeded-odds-markup .chalk-odds-wrapper table').forEach')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:35:57.133Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - stack:
+  overflowShadow (https://odds.oddsshark.com/widget/598/ncaab:64)
+  (anonymous function) (https://odds.oddsshark.com/widget/598/ncaab:91)
+  t (https://www.predictionmachine.com/odds/ncaab:1)
+  renderBase64 (:0)
+  createFailedCommandEH (phantomjs://platform/errors.js:229)
+  handleFailedCommandEH (phantomjs://platform/errors.js:235)
+  _handleLocateCommand (phantomjs://code/webelementlocator.js:240)
+  (anonymous function) (phantomjs://code/webelementlocator.js:230)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:35:57.924Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - msg: TypeError: undefined is not a constructor (evaluating 'document.querySelectorAll('#chalk-embeded-odds-markup .chalk-odds-wrapper table').forEach')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:35:57.924Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - stack:
+  overflowShadow (https://odds.oddsshark.com/widget/598/ncaab:64)
+  (anonymous function) (https://odds.oddsshark.com/widget/598/ncaab:91)
+  t (https://www.predictionmachine.com/odds/ncaab:1)
+  renderBase64 (:0)
+  createFailedCommandEH (phantomjs://platform/errors.js:229)
+  handleFailedCommandEH (phantomjs://platform/errors.js:235)
+  _handleLocateCommand (phantomjs://code/webelementlocator.js:240)
+  (anonymous function) (phantomjs://code/webelementlocator.js:230)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:36:00.162Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520960125
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:36:00.179Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - msg: TypeError: undefined is not a constructor (evaluating 'document.querySelectorAll('#chalk-embeded-odds-markup .chalk-odds-wrapper table').forEach')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:36:00.180Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - stack:
+  overflowShadow (https://odds.oddsshark.com/widget/598/ncaab:64)
+  (anonymous function) (https://odds.oddsshark.com/widget/598/ncaab:91)
+  t (https://www.predictionmachine.com/odds/ncaab:1)
+  renderBase64 (:0)
+  createFailedCommandEH (phantomjs://platform/errors.js:229)
+  handleFailedCommandEH (phantomjs://platform/errors.js:235)
+  _handleLocateCommand (phantomjs://code/webelementlocator.js:240)
+  (anonymous function) (phantomjs://code/webelementlocator.js:230)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:36:01.021Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - msg: TypeError: undefined is not a constructor (evaluating 'document.querySelectorAll('#chalk-embeded-odds-markup .chalk-odds-wrapper table').forEach')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:36:01.021Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - stack:
+  overflowShadow (https://odds.oddsshark.com/widget/598/ncaab:64)
+  (anonymous function) (https://odds.oddsshark.com/widget/598/ncaab:91)
+  t (https://www.predictionmachine.com/odds/ncaab:1)
+  renderBase64 (:0)
+  createFailedCommandEH (phantomjs://platform/errors.js:229)
+  handleFailedCommandEH (phantomjs://platform/errors.js:235)
+  _handleLocateCommand (phantomjs://code/webelementlocator.js:240)
+  (anonymous function) (phantomjs://code/webelementlocator.js:230)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:36:03.263Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520963230
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:36:03.285Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - msg: TypeError: undefined is not a constructor (evaluating 'document.querySelectorAll('#chalk-embeded-odds-markup .chalk-odds-wrapper table').forEach')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:36:03.285Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - stack:
+  overflowShadow (https://odds.oddsshark.com/widget/598/ncaab:64)
+  (anonymous function) (https://odds.oddsshark.com/widget/598/ncaab:91)
+  t (https://www.predictionmachine.com/odds/ncaab:1)
+  renderBase64 (:0)
+  createFailedCommandEH (phantomjs://platform/errors.js:229)
+  handleFailedCommandEH (phantomjs://platform/errors.js:235)
+  _handleLocateCommand (phantomjs://code/webelementlocator.js:240)
+  (anonymous function) (phantomjs://code/webelementlocator.js:230)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:36:04.089Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - msg: TypeError: undefined is not a constructor (evaluating 'document.querySelectorAll('#chalk-embeded-odds-markup .chalk-odds-wrapper table').forEach')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:36:04.090Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - stack:
+  overflowShadow (https://odds.oddsshark.com/widget/598/ncaab:64)
+  (anonymous function) (https://odds.oddsshark.com/widget/598/ncaab:91)
+  t (https://www.predictionmachine.com/odds/ncaab:1)
+  renderBase64 (:0)
+  createFailedCommandEH (phantomjs://platform/errors.js:229)
+  handleFailedCommandEH (phantomjs://platform/errors.js:235)
+  _handleLocateCommand (phantomjs://code/webelementlocator.js:240)
+  (anonymous function) (phantomjs://code/webelementlocator.js:230)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:36:06.301Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520966272
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:36:06.319Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - msg: TypeError: undefined is not a constructor (evaluating 'document.querySelectorAll('#chalk-embeded-odds-markup .chalk-odds-wrapper table').forEach')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:36:06.320Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - stack:
+  overflowShadow (https://odds.oddsshark.com/widget/598/ncaab:64)
+  (anonymous function) (https://odds.oddsshark.com/widget/598/ncaab:91)
+  t (https://www.predictionmachine.com/odds/ncaab:1)
+  renderBase64 (:0)
+  createFailedCommandEH (phantomjs://platform/errors.js:229)
+  handleFailedCommandEH (phantomjs://platform/errors.js:235)
+  _handleLocateCommand (phantomjs://code/webelementlocator.js:240)
+  (anonymous function) (phantomjs://code/webelementlocator.js:230)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:36:07.069Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - msg: TypeError: undefined is not a constructor (evaluating 'document.querySelectorAll('#chalk-embeded-odds-markup .chalk-odds-wrapper table').forEach')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:36:07.069Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - stack:
+  overflowShadow (https://odds.oddsshark.com/widget/598/ncaab:64)
+  (anonymous function) (https://odds.oddsshark.com/widget/598/ncaab:91)
+  t (https://www.predictionmachine.com/odds/ncaab:1)
+  renderBase64 (:0)
+  createFailedCommandEH (phantomjs://platform/errors.js:229)
+  handleFailedCommandEH (phantomjs://platform/errors.js:235)
+  _handleLocateCommand (phantomjs://code/webelementlocator.js:240)
+  (anonymous function) (phantomjs://code/webelementlocator.js:230)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:36:09.303Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520969272
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:36:09.326Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - msg: TypeError: undefined is not a constructor (evaluating 'document.querySelectorAll('#chalk-embeded-odds-markup .chalk-odds-wrapper table').forEach')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:36:09.326Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - stack:
+  overflowShadow (https://odds.oddsshark.com/widget/598/ncaab:64)
+  (anonymous function) (https://odds.oddsshark.com/widget/598/ncaab:91)
+  t (https://www.predictionmachine.com/odds/ncaab:1)
+  renderBase64 (:0)
+  createFailedCommandEH (phantomjs://platform/errors.js:229)
+  handleFailedCommandEH (phantomjs://platform/errors.js:235)
+  _handleLocateCommand (phantomjs://code/webelementlocator.js:240)
+  (anonymous function) (phantomjs://code/webelementlocator.js:230)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:36:10.102Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - msg: TypeError: undefined is not a constructor (evaluating 'document.querySelectorAll('#chalk-embeded-odds-markup .chalk-odds-wrapper table').forEach')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:36:10.102Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - stack:
+  overflowShadow (https://odds.oddsshark.com/widget/598/ncaab:64)
+  (anonymous function) (https://odds.oddsshark.com/widget/598/ncaab:91)
+  t (https://www.predictionmachine.com/odds/ncaab:1)
+  renderBase64 (:0)
+  createFailedCommandEH (phantomjs://platform/errors.js:229)
+  handleFailedCommandEH (phantomjs://platform/errors.js:235)
+  _handleLocateCommand (phantomjs://code/webelementlocator.js:240)
+  (anonymous function) (phantomjs://code/webelementlocator.js:230)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:36:18.231Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520978080
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:36:19.911Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520979380
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:36:20.790Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - msg: Unhandled promise rejection Error: Loading chunk vendors~web_widget failed.
+(missing: https://static.zdassets.com/web_widget/latest/vendors~web_widget.fbaa3b98f997b533cef2.chunk.js)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:36:20.790Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - stack:
+  (anonymous function) (https://static.zdassets.com/web_widget/latest/preload.1c8ba4eedb07b9300773.js:1)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:36:20.824Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - msg: Unhandled promise rejection Error: Loading chunk vendors~web_widget failed.
+(missing: https://static.zdassets.com/web_widget/latest/vendors~web_widget.fbaa3b98f997b533cef2.chunk.js)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:36:20.824Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - stack:
+  (anonymous function) (https://static.zdassets.com/web_widget/latest/preload.1c8ba4eedb07b9300773.js:1)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:36:20.964Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520980913
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:36:21.897Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598520981851
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:36:32.366Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - msg: TypeError: undefined is not a constructor (evaluating 'document.querySelectorAll('#chalk-embeded-odds-markup .chalk-odds-wrapper table').forEach')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:36:32.366Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - stack:
+  overflowShadow (https://odds.oddsshark.com/widget/598/mlb:64)
+  (anonymous function) (https://odds.oddsshark.com/widget/598/mlb:58)
+  t (https://www.predictionmachine.com/odds/mlb:1)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:36:33.318Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - msg: Unhandled promise rejection Error: Loading chunk vendors~web_widget failed.
+(missing: https://static.zdassets.com/web_widget/latest/vendors~web_widget.fbaa3b98f997b533cef2.chunk.js)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:36:33.318Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - stack:
+  (anonymous function) (https://static.zdassets.com/web_widget/latest/preload.1c8ba4eedb07b9300773.js:1)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:36:33.318Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - msg: Unhandled promise rejection Error: Loading chunk vendors~web_widget failed.
+(missing: https://static.zdassets.com/web_widget/latest/vendors~web_widget.fbaa3b98f997b533cef2.chunk.js)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:36:33.318Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - stack:
+  (anonymous function) (https://static.zdassets.com/web_widget/latest/preload.1c8ba4eedb07b9300773.js:1)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:37:14.001Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598521033811
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:37:18.813Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598521035673
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:37:19.669Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - msg: Unhandled promise rejection Error: Loading chunk vendors~web_widget failed.
+(missing: https://static.zdassets.com/web_widget/latest/vendors~web_widget.fbaa3b98f997b533cef2.chunk.js)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:37:19.669Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - stack:
+  (anonymous function) (https://static.zdassets.com/web_widget/latest/preload.1c8ba4eedb07b9300773.js:1)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:37:19.669Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - msg: Unhandled promise rejection Error: Loading chunk vendors~web_widget failed.
+(missing: https://static.zdassets.com/web_widget/latest/vendors~web_widget.fbaa3b98f997b533cef2.chunk.js)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:37:19.669Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - stack:
+  (anonymous function) (https://static.zdassets.com/web_widget/latest/preload.1c8ba4eedb07b9300773.js:1)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:37:19.890Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598521039865
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:37:21.007Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598521040846
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:37:28.563Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - msg: TypeError: undefined is not a constructor (evaluating 'document.querySelectorAll('#chalk-embeded-odds-markup .chalk-odds-wrapper table').forEach')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:37:28.563Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - stack:
+  overflowShadow (https://odds.oddsshark.com/widget/598/nhl:64)
+  (anonymous function) (https://odds.oddsshark.com/widget/598/nhl:58)
+  t (https://www.predictionmachine.com/odds/nhl:1)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:37:29.956Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - msg: Unhandled promise rejection Error: Loading chunk vendors~web_widget failed.
+(missing: https://static.zdassets.com/web_widget/latest/vendors~web_widget.fbaa3b98f997b533cef2.chunk.js)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:37:29.956Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - stack:
+  (anonymous function) (https://static.zdassets.com/web_widget/latest/preload.1c8ba4eedb07b9300773.js:1)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:37:29.998Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - msg: Unhandled promise rejection Error: Loading chunk vendors~web_widget failed.
+(missing: https://static.zdassets.com/web_widget/latest/vendors~web_widget.fbaa3b98f997b533cef2.chunk.js)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T09:37:29.998Z] Session [4fcb3bf0-e848-11ea-86ce-bdd06a76ac18] - page.onError - stack:
+  (anonymous function) (https://static.zdassets.com/web_widget/latest/preload.1c8ba4eedb07b9300773.js:1)
+
+  phantomjs://platform/console++.js:263 in error
