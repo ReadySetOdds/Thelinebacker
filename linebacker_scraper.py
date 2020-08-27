@@ -60,6 +60,14 @@ def numstr(value):
 	if val < 10: return '0' + str(val)
 	else: return str(val)
 
+
+def convert(seconds):
+    seconds = seconds % (24 * 3600)
+    hour = seconds // 3600
+    seconds %= 3600
+    minutes = seconds // 60
+    seconds %= 60
+
 # main
 if __name__ == '__main__':
 	while True:
@@ -827,4 +835,10 @@ if __name__ == '__main__':
 		driver.close()
 		pickle.dump(already, open(script_path + '/already.pkl', 'wb'))
 		print('Finished!')
+		time_period = 0
 		time.sleep(21600)
+		for h in range(0, 21599):
+			time.sleep(1)
+			time_period += 1
+			print(convert(time_period))
+
