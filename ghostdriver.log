@@ -1,0 +1,34 @@
+[INFO  - 2020-08-27T22:35:27.281Z] GhostDriver - Main - running on port 63507
+[INFO  - 2020-08-27T22:35:27.327Z] Session [9ade83a0-e8b5-11ea-81d4-0dc3f205c9be] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
+[INFO  - 2020-08-27T22:35:27.327Z] Session [9ade83a0-e8b5-11ea-81d4-0dc3f205c9be] - page.customHeaders:  - {}
+[INFO  - 2020-08-27T22:35:27.327Z] Session [9ade83a0-e8b5-11ea-81d4-0dc3f205c9be] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"mac-unknown-64bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2020-08-27T22:35:27.327Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 9ade83a0-e8b5-11ea-81d4-0dc3f205c9be
+[ERROR - 2020-08-27T22:35:40.806Z] Session [9ade83a0-e8b5-11ea-81d4-0dc3f205c9be] - page.onError - msg: Unhandled promise rejection Error: Loading chunk vendors~web_widget failed.
+(missing: https://static.zdassets.com/web_widget/latest/vendors~web_widget.fbaa3b98f997b533cef2.chunk.js)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T22:35:40.807Z] Session [9ade83a0-e8b5-11ea-81d4-0dc3f205c9be] - page.onError - stack:
+  (anonymous function) (https://static.zdassets.com/web_widget/latest/preload.1c8ba4eedb07b9300773.js:1)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T22:35:42.735Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598567742707
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T22:35:44.491Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598567744428
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T22:35:47.417Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598567746630
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T22:35:53.039Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598567753007
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T22:35:53.919Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598567753894
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T22:35:54.796Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598567754769
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-08-27T22:35:55.744Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1598567755652
+
+  phantomjs://platform/console++.js:263 in error

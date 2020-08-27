@@ -45,7 +45,10 @@ cursor = None
 
 # helper
 def wait_for_element(class_name, by=By.CLASS_NAME):
-	WebDriverWait(driver, element_timeout).until(EC.presence_of_element_located((by, class_name)))
+	try:
+		WebDriverWait(driver, element_timeout).until(EC.presence_of_element_located((by, class_name)))
+	except:
+		pass
 
 # def query (qu, args):
 # 	if database_on:
