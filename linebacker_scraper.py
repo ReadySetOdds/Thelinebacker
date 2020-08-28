@@ -150,6 +150,30 @@ if __name__ == '__main__':
 						# clean up
 						row[7] = row[7][1:]
 
+						# check database data
+						query_rotation = []
+						query_league = []
+						query_date = []
+						query_match_details = []
+						query_play = []
+
+						query = "SELECT rotation, league, date, match_details, play FROM bestbets"
+						cursor.execute(query)
+						Data = cursor.fetchall()
+
+						for pair in Data:
+							query_rotation.append(pair[0])
+							query_league.append(pair[1])
+							query_date.append(pair[2])
+							query_match_details.append(pair[3])
+							query_play.append(pair[4])
+						
+						for count in range(0, len(query_rotation)):
+							if(row[0] == query_rotation[count] and row[1] == query_league[count] and row[2] == query_date[count] and row[3] == query_match_details[count] and row[4] == query_play[count]):
+								query = "DELETE FROM users WHERE rotation = " + row[0]
+								cursor.execute(query)
+								database.commit()
+
 						# store
 						data = tuple(row)
 						cursor.execute(bestbets_insert, data)
@@ -320,6 +344,29 @@ if __name__ == '__main__':
 											result.append(game_table[n][56].strip())
 											result.append(game_table[n][60].strip())
 
+											# check database data
+											query_league = []
+											query_home_team = []
+											query_away_team = []
+											query_date = []
+
+											query = "SELECT league, home_team, away_team, date FROM games"
+											cursor.execute(query)
+											Data = cursor.fetchall()
+
+											for pair in Data:
+												query_league.append(pair[0])
+												query_home_team.append(pair[1])
+												query_away_team.append(pair[2])
+												query_date.append(pair[3])
+
+											for count in range(0, len(query_league)):
+												if(result[0] == query_league[count] and result[1] == query_home_team[count] and result[2] == query_away_team[count] and result[3] == query_date[count]):
+													query = "DELETE FROM users WHERE date = {0}".format(result[3])
+
+													cursor.execute(query)
+													database.commit()
+
 											data2 = tuple(result)
 											print(data2)
 											cursor.execute(games_insert, data2)
@@ -381,6 +428,28 @@ if __name__ == '__main__':
 											# print(temp)
 											result.append(game_table[n][64].strip())
 											result.append(game_table[n][68].strip())
+
+											# check database data
+											query_league = []
+											query_home_team = []
+											query_away_team = []
+											query_date = []
+
+											query = "SELECT league, home_team, away_team, date FROM games"
+											cursor.execute(query)
+											Data = cursor.fetchall()
+
+											for pair in Data:
+												query_league.append(pair[0])
+												query_home_team.append(pair[1])
+												query_away_team.append(pair[2])
+												query_date.append(pair[3])
+
+											for count in range(0, len(query_league)):
+												if(result[0] == query_league[count] and result[1] == query_home_team[count] and result[2] == query_away_team[count] and result[3] == query_date[count]):
+													query = "DELETE FROM users WHERE date = {0}".format(result[3])
+													cursor.execute(query)
+													database.commit()
 											
 											data2 = tuple(result)
 											print(data2)
@@ -440,6 +509,28 @@ if __name__ == '__main__':
 											# print(temp)
 											result.append("N/A")
 											result.append("N/A")
+
+											# check database data
+											query_league = []
+											query_home_team = []
+											query_away_team = []
+											query_date = []
+
+											query = "SELECT league, home_team, away_team, date FROM games"
+											cursor.execute(query)
+											Data = cursor.fetchall()
+
+											for pair in Data:
+												query_league.append(pair[0])
+												query_home_team.append(pair[1])
+												query_away_team.append(pair[2])
+												query_date.append(pair[3])
+
+											for count in range(0, len(query_league)):
+												if(result[0] == query_league[count] and result[1] == query_home_team[count] and result[2] == query_away_team[count] and result[3] == query_date[count]):
+													query = "DELETE FROM users WHERE date = {0}".format(result[3])
+													cursor.execute(query)
+													database.commit()
 											
 											data2 = tuple(result)
 											print(data2)
@@ -558,6 +649,30 @@ if __name__ == '__main__':
 											if(row['odds_under'] == ''):result.append('N/A')
 											else:result.append(row['odds_under'])
 
+											# check database data
+											query_league = []
+											query_home_team = []
+											query_away_team = []
+											query_date = []
+											query_odds_group = []
+
+											query = "SELECT league, home_team, away_team, date FROM odds"
+											cursor.execute(query)
+											Data = cursor.fetchall()
+
+											for pair in Data:
+												query_league.append(pair[0])
+												query_home_team.append(pair[1])
+												query_away_team.append(pair[2])
+												query_date.append(pair[3])
+												query_odds_group.append(pair[4])
+
+											for count in range(0, len(query_league)):
+												if(result[0] == query_league[count] and result[1] == query_home_team[count] and result[2] == query_away_team[count] and result[3] == query_date[count] and result[4] == query_odds_group[count]):
+													query = "DELETE FROM users WHERE (date = {0} AND odds_group = {1})".format(result[3],result[4])
+													cursor.execute(query)
+													database.commit()
+
 											data3 = tuple(result)
 											print(data3)
 											cursor.execute(odds_insert, data3)
@@ -566,17 +681,17 @@ if __name__ == '__main__':
 										if Wynn:
 											row['odds_group'] = 'Wynn'
 											# home
-											row['home_odds_1'] = data[data.index('Caesars')+4].strip().split(" ")[0]
-											row['home_odds_2'] = data[data.index('Caesars')+4].strip().split(" ")[-1]
+											row['home_odds_1'] = data[data.index('Wynn')+4].strip().split(" ")[0]
+											row['home_odds_2'] = data[data.index('Wynn')+4].strip().split(" ")[-1]
 											# away
-											row['away_odds_1'] = data[data.index('Caesars')+2].strip().split(" ")[0]
-											row['away_odds_2'] = data[data.index('Caesars')+2].strip().split(" ")[-1]
+											row['away_odds_1'] = data[data.index('Wynn')+2].strip().split(" ")[0]
+											row['away_odds_2'] = data[data.index('Wynn')+2].strip().split(" ")[-1]
 											# price_total
-											row['price_total'] = data[data.index('Caesars')+6]
+											row['price_total'] = data[data.index('Wynn')+6]
 											# odds over
-											row['odds_over'] = data[data.index('Caesars')+6+2]
+											row['odds_over'] = data[data.index('Wynn')+6+2]
 											# odds under
-											row['odds_under'] = data[data.index('Caesars')+6+2+1]
+											row['odds_under'] = data[data.index('Wynn')+6+2+1]
 											# sent to the database
 											result = []
 											result.append(sport)
@@ -599,6 +714,30 @@ if __name__ == '__main__':
 											else:result.append(row['odds_over'])
 											if(row['odds_under'] == ''):result.append('N/A')
 											else:result.append(row['odds_under'])
+
+											# check database data
+											query_league = []
+											query_home_team = []
+											query_away_team = []
+											query_date = []
+											query_odds_group = []
+
+											query = "SELECT league, home_team, away_team, date FROM odds"
+											cursor.execute(query)
+											Data = cursor.fetchall()
+
+											for pair in Data:
+												query_league.append(pair[0])
+												query_home_team.append(pair[1])
+												query_away_team.append(pair[2])
+												query_date.append(pair[3])
+												query_odds_group.append(pair[4])
+
+											for count in range(0, len(query_league)):
+												if(result[0] == query_league[count] and result[1] == query_home_team[count] and result[2] == query_away_team[count] and result[3] == query_date[count] and result[4] == query_odds_group[count]):
+													query = "DELETE FROM users WHERE (date = {0} AND odds_group = {1})".format(result[3],result[4])
+													cursor.execute(query)
+													database.commit()
 
 											data3 = tuple(result)
 											print(data3)
@@ -608,17 +747,17 @@ if __name__ == '__main__':
 										if Station:
 											row['odds_group'] = 'Station'
 											# home
-											row['home_odds_1'] = data[data.index('Caesars')+4].strip().split(" ")[0]
-											row['home_odds_2'] = data[data.index('Caesars')+4].strip().split(" ")[-1]
+											row['home_odds_1'] = data[data.index('Station')+4].strip().split(" ")[0]
+											row['home_odds_2'] = data[data.index('Station')+4].strip().split(" ")[-1]
 											# away
-											row['away_odds_1'] = data[data.index('Caesars')+2].strip().split(" ")[0]
-											row['away_odds_2'] = data[data.index('Caesars')+2].strip().split(" ")[-1]
+											row['away_odds_1'] = data[data.index('Station')+2].strip().split(" ")[0]
+											row['away_odds_2'] = data[data.index('Station')+2].strip().split(" ")[-1]
 											# price_total
-											row['price_total'] = data[data.index('Caesars')+6]
+											row['price_total'] = data[data.index('Station')+6]
 											# odds over
-											row['odds_over'] = data[data.index('Caesars')+6+2]
+											row['odds_over'] = data[data.index('Station')+6+2]
 											# odds under
-											row['odds_under'] = data[data.index('Caesars')+6+2+1]
+											row['odds_under'] = data[data.index('Station')+6+2+1]
 											# sent to the database
 											result = []
 											result.append(sport)
@@ -641,6 +780,30 @@ if __name__ == '__main__':
 											else:result.append(row['odds_over'])
 											if(row['odds_under'] == ''):result.append('N/A')
 											else:result.append(row['odds_under'])
+
+											# check database data
+											query_league = []
+											query_home_team = []
+											query_away_team = []
+											query_date = []
+											query_odds_group = []
+
+											query = "SELECT league, home_team, away_team, date FROM odds"
+											cursor.execute(query)
+											Data = cursor.fetchall()
+
+											for pair in Data:
+												query_league.append(pair[0])
+												query_home_team.append(pair[1])
+												query_away_team.append(pair[2])
+												query_date.append(pair[3])
+												query_odds_group.append(pair[4])
+
+											for count in range(0, len(query_league)):
+												if(result[0] == query_league[count] and result[1] == query_home_team[count] and result[2] == query_away_team[count] and result[3] == query_date[count] and result[4] == query_odds_group[count]):
+													query = "DELETE FROM users WHERE (date = {0} AND odds_group = {1})".format(result[3],result[4])
+													cursor.execute(query)
+													database.commit()
 
 											data3 = tuple(result)
 											print(data3)
@@ -650,17 +813,17 @@ if __name__ == '__main__':
 										if Mirage:
 											row['odds_group'] = 'Mirage'
 											# home
-											row['home_odds_1'] = data[data.index('Caesars')+4].strip().split(" ")[0]
-											row['home_odds_2'] = data[data.index('Caesars')+4].strip().split(" ")[-1]
+											row['home_odds_1'] = data[data.index('Mirage')+4].strip().split(" ")[0]
+											row['home_odds_2'] = data[data.index('Mirage')+4].strip().split(" ")[-1]
 											# away
-											row['away_odds_1'] = data[data.index('Caesars')+2].strip().split(" ")[0]
-											row['away_odds_2'] = data[data.index('Caesars')+2].strip().split(" ")[-1]
+											row['away_odds_1'] = data[data.index('Mirage')+2].strip().split(" ")[0]
+											row['away_odds_2'] = data[data.index('Mirage')+2].strip().split(" ")[-1]
 											# price_total
-											row['price_total'] = data[data.index('Caesars')+6]
+											row['price_total'] = data[data.index('Mirage')+6]
 											# odds over
-											row['odds_over'] = data[data.index('Caesars')+6+2]
+											row['odds_over'] = data[data.index('Mirage')+6+2]
 											# odds under
-											row['odds_under'] = data[data.index('Caesars')+6+2+1]
+											row['odds_under'] = data[data.index('Mirage')+6+2+1]
 											# sent to the database
 											result = []
 											result.append(sport)
@@ -684,6 +847,30 @@ if __name__ == '__main__':
 											if(row['odds_under'] == ''):result.append('N/A')
 											else:result.append(row['odds_under'])
 
+											# check database data
+											query_league = []
+											query_home_team = []
+											query_away_team = []
+											query_date = []
+											query_odds_group = []
+
+											query = "SELECT league, home_team, away_team, date FROM odds"
+											cursor.execute(query)
+											Data = cursor.fetchall()
+
+											for pair in Data:
+												query_league.append(pair[0])
+												query_home_team.append(pair[1])
+												query_away_team.append(pair[2])
+												query_date.append(pair[3])
+												query_odds_group.append(pair[4])
+
+											for count in range(0, len(query_league)):
+												if(result[0] == query_league[count] and result[1] == query_home_team[count] and result[2] == query_away_team[count] and result[3] == query_date[count] and result[4] == query_odds_group[count]):
+													query = "DELETE FROM users WHERE (date = {0} AND odds_group = {1})".format(result[3],result[4])
+													cursor.execute(query)
+													database.commit()
+
 											data3 = tuple(result)
 											print(data3)
 											cursor.execute(odds_insert, data3)
@@ -692,17 +879,17 @@ if __name__ == '__main__':
 										if Westgate:
 											row['odds_group'] = 'Westgate'
 											# home
-											row['home_odds_1'] = data[data.index('Caesars')+4].strip().split(" ")[0]
-											row['home_odds_2'] = data[data.index('Caesars')+4].strip().split(" ")[-1]
+											row['home_odds_1'] = data[data.index('Westgate')+4].strip().split(" ")[0]
+											row['home_odds_2'] = data[data.index('Westgate')+4].strip().split(" ")[-1]
 											# away
-											row['away_odds_1'] = data[data.index('Caesars')+2].strip().split(" ")[0]
-											row['away_odds_2'] = data[data.index('Caesars')+2].strip().split(" ")[-1]
+											row['away_odds_1'] = data[data.index('Westgate')+2].strip().split(" ")[0]
+											row['away_odds_2'] = data[data.index('Westgate')+2].strip().split(" ")[-1]
 											# price_total
-											row['price_total'] = data[data.index('Caesars')+6]
+											row['price_total'] = data[data.index('Westgate')+6]
 											# odds over
-											row['odds_over'] = data[data.index('Caesars')+6+2]
+											row['odds_over'] = data[data.index('Westgate')+6+2]
 											# odds under
-											row['odds_under'] = data[data.index('Caesars')+6+2+1]
+											row['odds_under'] = data[data.index('Westgate')+6+2+1]
 											# sent to the database
 											result = []
 											result.append(sport)
@@ -725,6 +912,30 @@ if __name__ == '__main__':
 											else:result.append(row['odds_over'])
 											if(row['odds_under'] == ''):result.append('N/A')
 											else:result.append(row['odds_under'])
+
+											# check database data
+											query_league = []
+											query_home_team = []
+											query_away_team = []
+											query_date = []
+											query_odds_group = []
+
+											query = "SELECT league, home_team, away_team, date FROM odds"
+											cursor.execute(query)
+											Data = cursor.fetchall()
+
+											for pair in Data:
+												query_league.append(pair[0])
+												query_home_team.append(pair[1])
+												query_away_team.append(pair[2])
+												query_date.append(pair[3])
+												query_odds_group.append(pair[4])
+
+											for count in range(0, len(query_league)):
+												if(result[0] == query_league[count] and result[1] == query_home_team[count] and result[2] == query_away_team[count] and result[3] == query_date[count] and result[4] == query_odds_group[count]):
+													query = "DELETE FROM users WHERE (date = {0} AND odds_group = {1})".format(result[3],result[4])
+													cursor.execute(query)
+													database.commit()
 
 											data3 = tuple(result)
 											print(data3)
