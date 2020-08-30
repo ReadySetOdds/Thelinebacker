@@ -155,13 +155,13 @@ if __name__ == '__main__':
 						for pair in Data:
 							query_rotation.append(pair[0])
 							query_league.append(pair[1])
-							query_date.append(pair[2])
+							query_date.append(pair[2].split(" ")[0])
 							query_match_details.append(pair[3])
 							query_play.append(pair[4])
 						
 						for count in range(0, len(query_rotation)):
-							if(row[0] == query_rotation[count] and row[1] == query_league[count] and row[2] == query_date[count] and row[3] == query_match_details[count] and row[4] == query_play[count]):
-								query = "DELETE FROM users WHERE rotation = " + row[0]
+							if(row[0] == query_rotation[count] and row[1] == query_league[count] and row[2].split(" ")[0] == query_date[count] and row[3] == query_match_details[count] and row[4] == query_play[count]):
+								query = "DELETE FROM users WHERE rotation = " + query_rotation[count]
 								cursor.execute(query)
 								database.commit()
 
@@ -275,9 +275,6 @@ if __name__ == '__main__':
 									result = []
 									data2 = ()
 									for n in range(0,len(game_table)):
-										print(n)
-										print(game_table[n])
-										print(len(game_table[n]))
 										if(len(game_table[n]) == 79):
 											result = []
 											data2 = ()
@@ -313,6 +310,7 @@ if __name__ == '__main__':
 											query_home_team = []
 											query_away_team = []
 											query_date = []
+											query_date_full = []
 
 											query = "SELECT league, home_team, away_team, date FROM games"
 											cursor.execute(query)
@@ -322,12 +320,12 @@ if __name__ == '__main__':
 												query_league.append(pair[0])
 												query_home_team.append(pair[1])
 												query_away_team.append(pair[2])
-												query_date.append(pair[3])
+												query_date.append(str(pair[3]).split(' ')[0].strip())
+												query_date_full.append(pair[3])
 
 											for count in range(0, len(query_league)):
-												if(result[0] == query_league[count] and result[1] == query_home_team[count] and result[2] == query_away_team[count] and result[3] == query_date[count]):
-													query = "DELETE FROM users WHERE date = {0}".format(result[3])
-
+												if(result[0] == query_league[count] and result[1] == query_home_team[count] and result[2] == query_away_team[count] and str(result[3]).split(' ')[0].strip() == query_date[count]):
+													query = "DELETE FROM games WHERE date = '{0}'".format(query_date_full[count])
 													cursor.execute(query)
 													database.commit()
 
@@ -379,6 +377,7 @@ if __name__ == '__main__':
 											query_home_team = []
 											query_away_team = []
 											query_date = []
+											query_date_full = []
 
 											query = "SELECT league, home_team, away_team, date FROM games"
 											cursor.execute(query)
@@ -388,11 +387,12 @@ if __name__ == '__main__':
 												query_league.append(pair[0])
 												query_home_team.append(pair[1])
 												query_away_team.append(pair[2])
-												query_date.append(pair[3])
+												query_date.append(str(pair[3]).split(' ')[0].strip())
+												query_date_full.append(pair[3])
 
 											for count in range(0, len(query_league)):
-												if(result[0] == query_league[count] and result[1] == query_home_team[count] and result[2] == query_away_team[count] and result[3] == query_date[count]):
-													query = "DELETE FROM users WHERE date = {0}".format(result[3])
+												if(result[0] == query_league[count] and result[1] == query_home_team[count] and result[2] == query_away_team[count] and str(result[3]).split(' ')[0].strip() == query_date[count]):
+													query = "DELETE FROM games WHERE date = '{0}'".format(query_date_full[count])
 													cursor.execute(query)
 													database.commit()
 											
@@ -402,7 +402,7 @@ if __name__ == '__main__':
 											print(cursor.rowcount, "record inserted.")
 											print("from 2")
 											database.commit()
-											print('\n')
+											# print('\n')
 										elif(len(game_table[n]) == 65):
 											result = []
 											data2 = ()
@@ -443,6 +443,7 @@ if __name__ == '__main__':
 											query_home_team = []
 											query_away_team = []
 											query_date = []
+											query_date_full = []
 
 											query = "SELECT league, home_team, away_team, date FROM games"
 											cursor.execute(query)
@@ -452,11 +453,12 @@ if __name__ == '__main__':
 												query_league.append(pair[0])
 												query_home_team.append(pair[1])
 												query_away_team.append(pair[2])
-												query_date.append(pair[3])
+												query_date.append(str(pair[3]).split(' ')[0].strip())
+												query_date_full.append(pair[3])
 
 											for count in range(0, len(query_league)):
-												if(result[0] == query_league[count] and result[1] == query_home_team[count] and result[2] == query_away_team[count] and result[3] == query_date[count]):
-													query = "DELETE FROM users WHERE date = {0}".format(result[3])
+												if(result[0] == query_league[count] and result[1] == query_home_team[count] and result[2] == query_away_team[count] and str(result[3]).split(' ')[0].strip() == query_date[count]):
+													query = "DELETE FROM games WHERE date = '{0}'".format(query_date_full[count])
 													cursor.execute(query)
 													database.commit()
 											
@@ -578,6 +580,7 @@ if __name__ == '__main__':
 											query_home_team = []
 											query_away_team = []
 											query_date = []
+											query_date_full = []
 											query_odds_group = []
 
 											query = "SELECT league, home_team, away_team, date, odds_group FROM odds"
@@ -588,12 +591,13 @@ if __name__ == '__main__':
 												query_league.append(pair[0])
 												query_home_team.append(pair[1])
 												query_away_team.append(pair[2])
-												query_date.append(pair[3])
+												query_date.append(str(pair[3]).split(' ')[0])
+												query_date_full.append(pair[3])
 												query_odds_group.append(pair[4])
 
 											for count in range(0, len(query_league)):
-												if(result[0] == query_league[count] and result[1] == query_home_team[count] and result[2] == query_away_team[count] and result[3] == query_date[count] and result[4] == query_odds_group[count]):
-													query = "DELETE FROM users WHERE (date = {0} AND odds_group = {1})".format(result[3],result[4])
+												if(result[0] == query_league[count] and result[1] == query_home_team[count] and result[2] == query_away_team[count] and str(result[3]).split(' ')[0] == query_date[count] and result[4] == query_odds_group[count]):
+													query = "DELETE FROM users WHERE (date = '{0}' AND odds_group = '{1}')".format(query_date_full[count],query_odds_group[count])
 													cursor.execute(query)
 													database.commit()
 
@@ -645,6 +649,7 @@ if __name__ == '__main__':
 											query_home_team = []
 											query_away_team = []
 											query_date = []
+											query_date_full = []
 											query_odds_group = []
 
 											query = "SELECT league, home_team, away_team, date, odds_group FROM odds"
@@ -655,12 +660,14 @@ if __name__ == '__main__':
 												query_league.append(pair[0])
 												query_home_team.append(pair[1])
 												query_away_team.append(pair[2])
-												query_date.append(pair[3])
+												query_date.append(str(pair[3]).split(' ')[0])
+												query_date_full.append(pair[3])
 												query_odds_group.append(pair[4])
 
 											for count in range(0, len(query_league)):
-												if(result[0] == query_league[count] and result[1] == query_home_team[count] and result[2] == query_away_team[count] and result[3] == query_date[count] and result[4] == query_odds_group[count]):
-													query = "DELETE FROM users WHERE (date = {0} AND odds_group = {1})".format(result[3],result[4])
+												if(result[0] == query_league[count] and result[1] == query_home_team[count] and result[2] == query_away_team[count] and str(result[3]).split(' ')[0] == query_date[count] and result[4] == query_odds_group[count]):
+													query = "DELETE FROM users WHERE (date = '{0}' AND odds_group = '{1}')".format(
+														query_date_full[count], query_odds_group[count])
 													cursor.execute(query)
 													database.commit()
 
@@ -712,6 +719,7 @@ if __name__ == '__main__':
 											query_home_team = []
 											query_away_team = []
 											query_date = []
+											query_date_full = []
 											query_odds_group = []
 
 											query = "SELECT league, home_team, away_team, date, odds_group FROM odds"
@@ -722,12 +730,13 @@ if __name__ == '__main__':
 												query_league.append(pair[0])
 												query_home_team.append(pair[1])
 												query_away_team.append(pair[2])
-												query_date.append(pair[3])
+												query_date.append(str(pair[3]).split(' ')[0])
+												query_date_full.append(pair[3])
 												query_odds_group.append(pair[4])
 
 											for count in range(0, len(query_league)):
-												if(result[0] == query_league[count] and result[1] == query_home_team[count] and result[2] == query_away_team[count] and result[3] == query_date[count] and result[4] == query_odds_group[count]):
-													query = "DELETE FROM users WHERE (date = {0} AND odds_group = {1})".format(result[3],result[4])
+												if(result[0] == query_league[count] and result[1] == query_home_team[count] and result[2] == query_away_team[count] and str(result[3]).split(' ')[0] == query_date[count] and result[4] == query_odds_group[count]):
+													query = "DELETE FROM users WHERE (date = '{0}' AND odds_group = '{1}')".format(query_date_full[count],query_odds_group[count])
 													cursor.execute(query)
 													database.commit()
 													
@@ -779,6 +788,7 @@ if __name__ == '__main__':
 											query_home_team = []
 											query_away_team = []
 											query_date = []
+											query_date_full = []
 											query_odds_group = []
 
 											query = "SELECT league, home_team, away_team, date, odds_group FROM odds"
@@ -789,12 +799,13 @@ if __name__ == '__main__':
 												query_league.append(pair[0])
 												query_home_team.append(pair[1])
 												query_away_team.append(pair[2])
-												query_date.append(pair[3])
+												query_date.append(str(pair[3]).split(' ')[0])
+												query_date_full.append(pair[3])
 												query_odds_group.append(pair[4])
 
 											for count in range(0, len(query_league)):
-												if(result[0] == query_league[count] and result[1] == query_home_team[count] and result[2] == query_away_team[count] and result[3] == query_date[count] and result[4] == query_odds_group[count]):
-													query = "DELETE FROM users WHERE (date = {0} AND odds_group = {1})".format(result[3],result[4])
+												if(result[0] == query_league[count] and result[1] == query_home_team[count] and result[2] == query_away_team[count] and str(result[3]).split(' ')[0] == query_date[count] and result[4] == query_odds_group[count]):
+													query = "DELETE FROM users WHERE (date = '{0}' AND odds_group = '{1}')".format(query_date_full[count],query_odds_group[count])
 													cursor.execute(query)
 													database.commit()
 
@@ -846,6 +857,7 @@ if __name__ == '__main__':
 											query_home_team = []
 											query_away_team = []
 											query_date = []
+											query_date_full = []
 											query_odds_group = []
 
 											query = "SELECT league, home_team, away_team, date, odds_group FROM odds"
@@ -856,12 +868,13 @@ if __name__ == '__main__':
 												query_league.append(pair[0])
 												query_home_team.append(pair[1])
 												query_away_team.append(pair[2])
-												query_date.append(pair[3])
+												query_date.append(str(pair[3]).split(' ')[0])
+												query_date_full.append(pair[3])
 												query_odds_group.append(pair[4])
 
 											for count in range(0, len(query_league)):
-												if(result[0] == query_league[count] and result[1] == query_home_team[count] and result[2] == query_away_team[count] and result[3] == query_date[count] and result[4] == query_odds_group[count]):
-													query = "DELETE FROM users WHERE (date = {0} AND odds_group = {1})".format(result[3],result[4])
+												if(result[0] == query_league[count] and result[1] == query_home_team[count] and result[2] == query_away_team[count] and str(result[3]).split(' ')[0] == query_date[count] and result[4] == query_odds_group[count]):
+													query = "DELETE FROM users WHERE (date = '{0}' AND odds_group = '{1}')".format(query_date_full[count],query_odds_group[count])
 													cursor.execute(query)
 													database.commit()
 
