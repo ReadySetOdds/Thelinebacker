@@ -169,7 +169,7 @@ if __name__ == '__main__':
 						data = tuple(row)
 						cursor.execute(bestbets_insert, data)
 						database.commit()
-						print(row)
+						print(data)
 
 						# reset
 						row = []
@@ -239,6 +239,7 @@ if __name__ == '__main__':
 												# start
 												data = htt(table.get_attribute('innerHTML')).split('\n')
 												game_table.append(data)
+												print(data)
 
 												if(len(data) > 3):
 													special_odds = False
@@ -250,24 +251,46 @@ if __name__ == '__main__':
 												# 	if("vs" in data[i]):
 												# 		games_index.append(len(data))
 												
-												for i in data:
-													if(", " in i and " at " in i and "am" in i or "pm" in i):
-														# format time
-														month, day, hour, minute, apm = re.findall(games_date_key, i)[0]
-														month_num = months.index(month) + 1
-														year = today.year
-														if month_num < 1:
-															year -= 1
-														hour = int(hour) + 1
-														if apm == 'p':
-															hour += 12
-														if hour >= 24:
-															hour -= 24
-														Month.append(month_num)
-														Day.append(day)
-														Hour.append(hour)
-														Minute.append(minute)
-														Apm.append(apm)
+												# for i in data:
+												# 	if(", " in i and " at " in i):
+												# 		print('time')
+												# 		# format time
+												# 		month, day, hour, minute, apm = re.findall(games_date_key, i)[0]
+												# 		print(month, day, hour, minute, apm)
+												# 		month_num = months.index(month) + 1
+												# 		year = today.year
+												# 		if month_num < 1:
+												# 			year -= 1
+												# 		hour = int(hour) + 1
+												# 		if apm == 'p':
+												# 			hour += 12
+												# 		if hour >= 24:
+												# 			hour -= 24
+												# 		Month.append(month_num)
+												# 		Day.append(day)
+												# 		Hour.append(hour)
+												# 		Minute.append(minute)
+												# 		Apm.append(apm)
+
+												print(data[14].split(" "))
+												month_num = months.index(data[14].split(" ")[1]) + 1
+												year = today.year
+												day = data[14].split(" ")[2][:-2]
+												hour = data[14].split(" ")[4].split(':')[0]
+												minute = data[14].split(" ")[4].split(':')[-1].split('pm')[0].split('am')[0]
+												apm = data[14].split(" ")[4].split(':')[-1][-2:][0]
+												if month_num < 1:
+													year -= 1
+												hour = int(hour) + 1
+												if apm == 'p':
+													hour += 12
+												if hour >= 24:
+													hour -= 24
+												Month.append(month_num)
+												Day.append(day)
+												Hour.append(hour)
+												Minute.append(minute)
+												Apm.append(apm)
 														
 											# oops
 											except:pass
@@ -281,7 +304,9 @@ if __name__ == '__main__':
 											result.append(sport)
 											result.append(game_table[n][10].strip() + ' ' + game_table[n][12].strip())
 											result.append(game_table[n][0].strip() + ' ' + game_table[n][2].strip())
+											
 											result.append('{}-{}-{} {}:{}:00'.format(year, numstr(Month[n]), numstr(Day[n]), numstr(Hour[n]), numstr(Minute[n])))
+											print(game_table[n])
 
 											result.append(game_table[n][24].strip())
 											result.append(game_table[n][16].strip())
@@ -297,7 +322,7 @@ if __name__ == '__main__':
 											result.append(game_table[n][36].strip().replace('$',''))
 											result.append(game_table[n][40].strip())
 
-											result.append(int(game_table[n][66].strip()))
+											result.append(game_table[n][66].strip())
 
 											result.append(game_table[n][74].strip().replace('$',''))
 											result.append(game_table[n][70].strip())
