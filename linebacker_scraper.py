@@ -7,7 +7,6 @@ from selenium.common.exceptions import TimeoutException, NoSuchElementException
 from html2text import html2text as htt
 import pymysql.cursors
 import json, datetime, re, os, pickle, sys, inspect, requests, time
-from bs4 import BeautifulSoup
 
 # constants
 script_path = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe()))).replace('\\', '/')
@@ -129,7 +128,8 @@ if __name__ == '__main__':
 						if month < 1: year = today.year - 1
 						else: year = today.year
 						hour, minute, apm = re.findall(time_key, row[2])[0]
-						hour = int(hour) + 1
+						hour = int(hour)
+						print('pm: ' + apm)
 						if apm == 'p': hour += 12
 						if hour == 24: hour = 0
 						minute = int(minute)
@@ -242,7 +242,6 @@ if __name__ == '__main__':
 												# start
 												data = htt(table.get_attribute('innerHTML')).split('\n')
 												game_table.append(data)
-												print(data)
 
 												if(len(data) > 3):
 													special_odds = False
@@ -256,13 +255,11 @@ if __name__ == '__main__':
 												hour = data[14].split(" ")[4].split(':')[0]
 												minute = data[14].split(" ")[4].split(':')[-1].split('pm')[0].split('am')[0]
 												apm = data[14].split(" ")[4].split(':')[-1][-2:][0]
-												if month_num < 1:
-													year -= 1
-												hour = int(hour) + 1
-												if apm == 'p':
-													hour += 12
-												if hour >= 24:
-													hour -= 24
+												if month_num < 1: year -= 1
+												hour = int(hour)
+												print('pm: ' + apm)
+												if apm == 'p': hour += 12
+												if hour >= 24: hour -= 24
 												Month.append(month_num)
 												Day.append(day)
 												Hour.append(hour)
@@ -521,7 +518,8 @@ if __name__ == '__main__':
 
 										date = data[2] + data[3]
 										month, day, year, hour, minute, apm = re.findall(odds_date_key, date, re.DOTALL)[0]
-										hour = int(hour) + 1
+										hour = int(hour)
+										print('pm: ' + apm)
 										if apm == 'P': hour += 12
 										if hour == 24: hour = 0
 										row['date'] = '{}-{}-{} {}:{}:00'.format(year, numstr(months.index(month) + 1), day, hour, minute)
