@@ -896,7 +896,7 @@ if __name__ == '__main__':
 		driver.close()
 		pickle.dump(already, open(script_path + '/already.pkl', 'wb'))
 		print('Finished!')
-		for h in range(0, 21599):
-			time.sleep(1)
-			print(convert(h))
+		# for h in range(0, 21599):
+		# 	time.sleep(1)
+		# 	print(convert(h))
 
