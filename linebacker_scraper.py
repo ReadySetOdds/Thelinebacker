@@ -59,7 +59,6 @@ def convert(seconds):
 
 # main
 if __name__ == '__main__':
-	while True:
 		print('Start')
 		# get lasts
 		# if os.path.exists('already.pkl'):
